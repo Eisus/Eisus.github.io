@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>http://yoursite.com/about/index.html</loc>
+    
+    <lastmod>2016-06-22T09:47:45.514Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/06/21/%E8%AF%95%E4%B8%80%E4%B8%8B%EF%BC%8C%E5%B0%B1%E8%AF%95%E4%B8%80%E4%B8%8B/</loc>
+    
+    <lastmod>2016-06-21T14:30:42.207Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/tags/index.html</loc>
+    
+    <lastmod>2016-06-21T13:40:47.415Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/categories/index.html</loc>
+    
+    <lastmod>2016-06-21T13:38:03.691Z</lastmod>
+    
+  </url>
+  
+</urlset>
