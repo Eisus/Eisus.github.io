@@ -1,0 +1,699 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="HTTP," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="URL与资源浏览Internet资源URI由URL和URN构成。URL Vs. URN URL是通过描述资源的位置来标识资源的，而URN则是通过名字来识别资源的，与它们当前所处的位置无关。URL提供了一种统一的资源命名方式，大多数URL都有同样的：“方案：//服务器位置/路径”结构。以下展示URL的三部分。同时，URL也可通过HTTP外的其他协议来访问资源，它们可以指向Internet上的任意资源">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTTP:Web基础——URL与资源">
+<meta property="og:url" content="http://yoursite.com/2016/06/25/HTTP-Web基础——URL与资源/index.html">
+<meta property="og:site_name" content="Susie's Blog">
+<meta property="og:description" content="URL与资源浏览Internet资源URI由URL和URN构成。URL Vs. URN URL是通过描述资源的位置来标识资源的，而URN则是通过名字来识别资源的，与它们当前所处的位置无关。URL提供了一种统一的资源命名方式，大多数URL都有同样的：“方案：//服务器位置/路径”结构。以下展示URL的三部分。同时，URL也可通过HTTP外的其他协议来访问资源，它们可以指向Internet上的任意资源">
+<meta property="og:image" content="http://static.zybuluo.com/Eisus/r88063sysdt3pwt0w9h2c547/image_1am375egr1lqn1j0b1qfn145i66q9.png">
+<meta property="og:image" content="http://static.zybuluo.com/Eisus/fnnlfdaxemoyl89gcqd9umn1/image_1am379ov819lg7fo1njc8l51144m.png">
+<meta property="og:image" content="http://static.zybuluo.com/Eisus/ih05gj0yg3wav1ibp4u1bvg2/image_1am37aafi1e4h6ie1l2a1gbl17oq1j.png">
+<meta property="og:image" content="http://static.zybuluo.com/Eisus/o5whazdlgg19casezkut212d/image_1am37g8546vtl3t1iem16t01li620.png">
+<meta property="og:image" content="http://static.zybuluo.com/Eisus/rvk1erm0m6948t0hokk2c27s/image_1am37ibv11aeo7ttvvg18eq14ab2t.png">
+<meta property="og:image" content="http://static.zybuluo.com/Eisus/x1ra43fxl9v2haec615a7pkj/image_1am37k2d31is2mo7fnv1p4sema4a.png">
+<meta property="og:image" content="http://static.zybuluo.com/Eisus/3ryx024kwsmd5obcy4idk2xa/image_1am381h1v6nrv2o119r1ifs7at57.png">
+<meta property="og:image" content="http://static.zybuluo.com/Eisus/ddam7qglgim3jvtwzhfun9tq/image_1am38a6l95qt1aca1oh61b6t0c5k.png">
+<meta property="og:image" content="http://static.zybuluo.com/Eisus/f9zpu0ayhte3olxt3dhbzsz5/image_1am38cj2l3tg1nvg1nbftr1ua56h.png">
+<meta property="og:image" content="http://static.zybuluo.com/Eisus/pmai95ymwk7psuaejn6sybkf/image_1am38f9r9u7g1na5mao1touuro8e.png">
+<meta property="og:updated_time" content="2016-06-25T08:06:57.379Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HTTP:Web基础——URL与资源">
+<meta name="twitter:description" content="URL与资源浏览Internet资源URI由URL和URN构成。URL Vs. URN URL是通过描述资源的位置来标识资源的，而URN则是通过名字来识别资源的，与它们当前所处的位置无关。URL提供了一种统一的资源命名方式，大多数URL都有同样的：“方案：//服务器位置/路径”结构。以下展示URL的三部分。同时，URL也可通过HTTP外的其他协议来访问资源，它们可以指向Internet上的任意资源">
+<meta name="twitter:image" content="http://static.zybuluo.com/Eisus/r88063sysdt3pwt0w9h2c547/image_1am375egr1lqn1j0b1qfn145i66q9.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/06/25/HTTP-Web基础——URL与资源/"/>
+
+  <title> HTTP:Web基础——URL与资源 | Susie's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Susie's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">The life is tough, but I'm tougher</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                HTTP:Web基础——URL与资源
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-25T15:50:16+08:00" content="2016-06-25">
+              2016-06-25
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Tech/" itemprop="url" rel="index">
+                    <span itemprop="name">Tech</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/06/25/HTTP-Web基础——URL与资源/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/25/HTTP-Web基础——URL与资源/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+	     <span>&nbsp; | &nbsp;
+             <span id="busuanzi_value_page_pv" ></span> view.
+             </span>    
+          
+
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="URL与资源"><a href="#URL与资源" class="headerlink" title="URL与资源"></a>URL与资源</h2><h3 id="浏览Internet资源"><a href="#浏览Internet资源" class="headerlink" title="浏览Internet资源"></a>浏览Internet资源</h3><p>URI由URL和URN构成。URL Vs. URN URL是通过描述资源的位置来标识资源的，而URN则是通过名字来识别资源的，与它们当前所处的位置无关。URL提供了一种统一的资源命名方式，大多数URL都有同样的：“方案：//服务器位置/路径”结构。以下展示URL的三部分。<br><img src="http://static.zybuluo.com/Eisus/r88063sysdt3pwt0w9h2c547/image_1am375egr1lqn1j0b1qfn145i66q9.png" alt="image_1am375egr1lqn1j0b1qfn145i66q9.png-62.1kB"><br>同时，URL也可通过HTTP外的其他协议来访问资源，它们可以指向Internet上的任意资源。</p>
+<h3 id="URL的语法"><a href="#URL的语法" class="headerlink" title="URL的语法"></a>URL的语法</h3><p>大多数URL方案的URL语法都建立在以下这个由9部分构成的通用格式上：<br><img src="http://static.zybuluo.com/Eisus/fnnlfdaxemoyl89gcqd9umn1/image_1am379ov819lg7fo1njc8l51144m.png" alt="image_1am379ov819lg7fo1njc8l51144m.png-11.9kB"><br><img src="http://static.zybuluo.com/Eisus/ih05gj0yg3wav1ibp4u1bvg2/image_1am37aafi1e4h6ie1l2a1gbl17oq1j.png" alt="image_1am37aafi1e4h6ie1l2a1gbl17oq1j.png-224.5kB"></p>
+<h4 id="方案"><a href="#方案" class="headerlink" title="方案"></a>方案</h4><p> 方案是规定如何访问制定资源的主要标识符。方案名与大小写无关。</p>
+<h4 id="主机与端口"><a href="#主机与端口" class="headerlink" title="主机与端口"></a>主机与端口</h4><p>要想在因特网上找到资源，应用程序要知道是哪台机器装载了资源，以及在哪台机器的什么地方可以找到对目标资源进行访问的服务器。URL的主机和端口组件提供了这两组信息。对下层使用了TCP协议的HTTP来说，默认端口号为80.</p>
+<h4 id="用户名和密码"><a href="#用户名和密码" class="headerlink" title="用户名和密码"></a>用户名和密码</h4><p>很多服务器都要求输入用户名和密码才会允许用户访问数据。eg. FTP<br><img src="http://static.zybuluo.com/Eisus/o5whazdlgg19casezkut212d/image_1am37g8546vtl3t1iem16t01li620.png" alt="image_1am37g8546vtl3t1iem16t01li620.png-35.4kB"></p>
+<h4 id="路径"><a href="#路径" class="headerlink" title="路径"></a>路径</h4><p>路径通常很像一个分级的文件系统路径。每个路径段都有自己的参数组件。</p>
+<h4 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h4><p>为了向应用程序提供它们所需的输入参数，以便正确地与服务器进行交互，URL中有一个参数组件。HTTP URL 的路径组件可以分成若干路径段。每段都可以有自己的参数。<br><img src="http://static.zybuluo.com/Eisus/rvk1erm0m6948t0hokk2c27s/image_1am37ibv11aeo7ttvvg18eq14ab2t.png" alt="image_1am37ibv11aeo7ttvvg18eq14ab2t.png-12.7kB"></p>
+<h4 id="查询字符串"><a href="#查询字符串" class="headerlink" title="查询字符串"></a>查询字符串</h4><p>很多资源，eg.数据库服务，都是可以通过提问或进行查询来缩小所请求资源类型范围的。除了有些不合规则的字符需要特别处理外，对查询组件的格式没什么要求。按照常规网关都希望查询字符串以一系列“名/值”对的形式出现，名值对之间用“&amp;”分隔。</p>
+<h4 id="片段"><a href="#片段" class="headerlink" title="片段"></a>片段</h4><p>以便引用部分资源或资源的一个片段，URL支持使用frag组件来表示一个资源内部的片段。HTTP服务器通常只处理整个对象，而不是对象片段，客户端不能将片段传送给服务器。浏览器从服务器获得了整个资源后，会根据片段来显示你感兴趣的那部分资源。<br><img src="http://static.zybuluo.com/Eisus/x1ra43fxl9v2haec615a7pkj/image_1am37k2d31is2mo7fnv1p4sema4a.png" alt="image_1am37k2d31is2mo7fnv1p4sema4a.png-126.2kB"><br>注意： 片段是不会发送给服务器的，服务器会返回整个HTML页面。是由浏览器从指定片段处开始显示HTML页面的。</p>
+<h3 id="URL快捷方式"><a href="#URL快捷方式" class="headerlink" title="URL快捷方式"></a>URL快捷方式</h3><h4 id="相对URL"><a href="#相对URL" class="headerlink" title="相对URL"></a>相对URL</h4><p>URL有两种方式： 绝对的和相对的。绝对URL中包含所有访问资源所需的全部信息。相对URL是URL的一种便捷缩略记法，是不完整的，想从相对URL中获取访问资源所需的全部信息，就必须相对于另一个，被称为基础（base）的URL进行解析。方案、主机和其他一些组件可以从它们所属资源的基础URL中推导出来。处理URL的应用程序要能在相对和绝对URL之间进行转换。还需注意的是： 相对URL为保持一组资源的可移植性提供了一种便携方式。如果使用的是相对URL，就可以在搬移一组文档的同时，仍然保持链接的有效性，因为相对URL都是相对于新基础进行解释的。这样就可以实现在其他服务器上提供景象内容之类的功能了。</p>
+<h5 id="基础URL"><a href="#基础URL" class="headerlink" title="基础URL"></a>基础URL</h5><p>可来自于：</p>
+<ul>
+<li>在资料中显式提供：  eg. HTML文档中可能会包含一个定义了基础URL的HTML标记 BASE</li>
+<li>封装资源的基础URL： 如果在一个没有显式指定基础URL的资源中发现了一个相对URL，可以将它所属的资源的URL作为基础。</li>
+<li>没有基础URL：通常意味着你有一个绝对URL；但有时可能只是一个不完整或损坏了的URL。</li>
+</ul>
+<h5 id="解析相对引用"><a href="#解析相对引用" class="headerlink" title="解析相对引用"></a>解析相对引用</h5><p>分解URL。只要将基础和相对URL划分成了组件，就可以通过下属将相对URL转换成其绝对模式，之后就可以用它来引用资源了。<br><img src="http://static.zybuluo.com/Eisus/3ryx024kwsmd5obcy4idk2xa/image_1am381h1v6nrv2o119r1ifs7at57.png" alt="image_1am381h1v6nrv2o119r1ifs7at57.png-120.6kB"></p>
+<h4 id="自动扩展URL"><a href="#自动扩展URL" class="headerlink" title="自动扩展URL"></a>自动扩展URL</h4><p>有些浏览器会在用户提交URL之后，或在用户输入的时候尝试着自动扩展URL。“自动扩展”特性有以下两种方式：</p>
+<ul>
+<li>主机名扩展：只要有一些小提示，浏览器就可以在没有帮助的情况下，将你输入的户籍名扩展为完整的主机名。eg. yahoo–&gt;www.yahoo.com。 但这可能会为其他一些HTTP应用程序带来问题，比如代理。</li>
+<li>历史扩展： 浏览器将以前用户访问过的URL历史存储起来，当用户输入时，就将输入与历史URL的前缀向匹配，并提供一些完整的选项供你选择。注意： 与代理共同使用时，URL自动扩展的行为可能会有所不同。</li>
+</ul>
+<h3 id="字符"><a href="#字符" class="headerlink" title="字符"></a>字符</h3><p>URL字符主要考虑到三点：</p>
+<ul>
+<li>可移植，安全传输。它要统一地命名Internet上所有的资源，也就意味着要通过各种不同的协议传送这些资源，安全传输意味着URL的传输不能丢失信息。有些协议使用的传输方法会除去一些特定的字符。为了避开这些问题，URL只能使用一些相对较小的、通用的安全字母表中的字符。</li>
+<li>可供人类阅读，因此即使不可见、不可打印的字符能够穿过邮件程序，从而成为可移植的，也不能在URL中使用。</li>
+<li>完整。有时人们可能会希望URL中包含除通用的安全字母表之外的二进制数据或字符。因此需要有种转椅机制，能够将不安全的字符编码为安全字符，再进行传输。</li>
+</ul>
+<h4 id="URL字符集"><a href="#URL字符集" class="headerlink" title="URL字符集"></a>URL字符集</h4><p>US-ASCII字符集可以执行很好，但完整性欠佳。所以URL的设计者就将转义序列继承了进去，通过转义序列，就可以用US-ASCII字符集的有限子集对任意字符值或数据进行编码，这样就实现了可移植性和完整性。</p>
+<h4 id="编码机制"><a href="#编码机制" class="headerlink" title="编码机制"></a>编码机制</h4><p>用来在URL中表示各种不安全的字符，这种编码机制就是通过“转义”表示法来表示不安全的字符，这种转义表示法包含一个百分号%，后面跟着两个表示字符ASCII码的十六进制数。<br><img src="http://static.zybuluo.com/Eisus/ddam7qglgim3jvtwzhfun9tq/image_1am38a6l95qt1aca1oh61b6t0c5k.png" alt="image_1am38a6l95qt1aca1oh61b6t0c5k.png-40kB"></p>
+<h4 id="字符限制"><a href="#字符限制" class="headerlink" title="字符限制"></a>字符限制</h4><ul>
+<li>有着特殊含义。</li>
+<li>不在定义的US-ASCII可打印字符集中。</li>
+<li>与某些因特网网关和协议产生混淆。<br><img src="http://static.zybuluo.com/Eisus/f9zpu0ayhte3olxt3dhbzsz5/image_1am38cj2l3tg1nvg1nbftr1ua56h.png" alt="image_1am38cj2l3tg1nvg1nbftr1ua56h.png-147.7kB"></li>
+</ul>
+<h4 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h4><p>应用程序要按照一定规范工作。客户端应用程序在向其他应用程序发送任意URL之前，最好把所有不安全或受限字符都进行转换。只要对所有不安全字符都进行了编码，这个URL就是可在各应用程序之间共享的规范格式；也就无需操心其他应用程序会被字符的任何含义所迷惑。<br>最适合判断是否需要对字符进行编码的程序就是从用户处获取URL的远端应用程序。</p>
+<h3 id="方案-1"><a href="#方案-1" class="headerlink" title="方案"></a>方案</h3><p>常见方案格式：<br><img src="http://static.zybuluo.com/Eisus/pmai95ymwk7psuaejn6sybkf/image_1am38f9r9u7g1na5mao1touuro8e.png" alt="image_1am38f9r9u7g1na5mao1touuro8e.png-547.1kB"></p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>URL是一种强有力的工具。但URL并不完美。它们表示的是实际的地址，而不是准确的名字。这种方案的确定在于如果资源被移走了，URL就不再有效。那是，它就无法对对象进行定位了。<br>因此IETE已经对URN的新标准做了一段时间的研究了。PURL就是用URL来实现URN功能的一个例子。基本思想是在搜索资源的过程中引入另一个中间层，通过一个中间资源定位符服务器对资源的实际URL进行等级和跟踪。客户端可以向定位符请求一个永久URL， 定位符可以以一个资源作为相应，将客户端重定向到资源当前实际的URL上去。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/HTTP/" rel="tag">#HTTP</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/06/23/HTTP权威指南——HTTP-Web基础（1）/" rel="next" title="HTTP权威指南——HTTP: Web基础（1）">
+                <i class="fa fa-chevron-left"></i> HTTP权威指南——HTTP: Web基础（1）
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/06/25/HTTP-Web基础——URL与资源/"
+           data-title="HTTP:Web基础——URL与资源" data-url="http://yoursite.com/2016/06/25/HTTP-Web基础——URL与资源/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://s-media-cache-ak0.pinimg.com/236x/57/59/ef/5759ef4efa4f872ca793578e3e0f0984.jpg"
+               alt="Susie_Lee" />
+          <p class="site-author-name" itemprop="name">Susie_Lee</p>
+          <p class="site-description motion-element" itemprop="description">It is an ill wind that blows nobody good.</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Eisus" target="_blank" title="GitHut">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  GitHut
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#URL与资源"><span class="nav-number">1.</span> <span class="nav-text">URL与资源</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览Internet资源"><span class="nav-number">1.1.</span> <span class="nav-text">浏览Internet资源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#URL的语法"><span class="nav-number">1.2.</span> <span class="nav-text">URL的语法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#方案"><span class="nav-number">1.2.1.</span> <span class="nav-text">方案</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#主机与端口"><span class="nav-number">1.2.2.</span> <span class="nav-text">主机与端口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#用户名和密码"><span class="nav-number">1.2.3.</span> <span class="nav-text">用户名和密码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#路径"><span class="nav-number">1.2.4.</span> <span class="nav-text">路径</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参数"><span class="nav-number">1.2.5.</span> <span class="nav-text">参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查询字符串"><span class="nav-number">1.2.6.</span> <span class="nav-text">查询字符串</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#片段"><span class="nav-number">1.2.7.</span> <span class="nav-text">片段</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#URL快捷方式"><span class="nav-number">1.3.</span> <span class="nav-text">URL快捷方式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#相对URL"><span class="nav-number">1.3.1.</span> <span class="nav-text">相对URL</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#基础URL"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">基础URL</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#解析相对引用"><span class="nav-number">1.3.1.2.</span> <span class="nav-text">解析相对引用</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自动扩展URL"><span class="nav-number">1.3.2.</span> <span class="nav-text">自动扩展URL</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符"><span class="nav-number">1.4.</span> <span class="nav-text">字符</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#URL字符集"><span class="nav-number">1.4.1.</span> <span class="nav-text">URL字符集</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#编码机制"><span class="nav-number">1.4.2.</span> <span class="nav-text">编码机制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字符限制"><span class="nav-number">1.4.3.</span> <span class="nav-text">字符限制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#说明"><span class="nav-number">1.4.4.</span> <span class="nav-text">说明</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方案-1"><span class="nav-number">1.5.</span> <span class="nav-text">方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">1.6.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Susie_Lee</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+                     Total view <span id="busuanzi_value_site_pv"></span> &nbsp&nbsp&nbsp
+  You are the No.<span id="busuanzi_value_site_uv"></span> visiter.
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"Eisus"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>

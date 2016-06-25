@@ -3,19 +3,21 @@
 
 
     
-    
   <url>
-    <loc>http://yoursite.com/2016/06/23/HTTP%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97%E2%80%94%E2%80%94HTTP-Web%E5%9F%BA%E7%A1%80%EF%BC%881%EF%BC%89/</loc>
-    <lastmod>2016-06-23T09:41:16.684Z</lastmod>
+    <loc>http://yoursite.com/2016/06/25/HTTP-Web%E5%9F%BA%E7%A1%80%E2%80%94%E2%80%94URL%E4%B8%8E%E8%B5%84%E6%BA%90/</loc>
+    <lastmod>2016-06-25T08:06:57.379Z</lastmod>
     <data>
         <display>
-        <title>HTTP权威指南——HTTP: Web基础（1）</title>
-        <pubTime>2016-06-23T09:34:23.000Z</pubTime>
+        <title>HTTP:Web基础——URL与资源</title>
+        <pubTime>2016-06-25T07:50:16.000Z</pubTime>
         
         <tag>HTTP</tag>
          
          
            
+             
+              <breadCrumb title="Tech" url="http://yoursite.com/categories/Tech/"/>
+          
         </display>
     </data>
     </url>
@@ -23,7 +25,7 @@
     
   <url>
     <loc>http://yoursite.com/2016/06/21/%E8%AF%95%E4%B8%80%E4%B8%8B%EF%BC%8C%E5%B0%B1%E8%AF%95%E4%B8%80%E4%B8%8B/</loc>
-    <lastmod>2016-06-21T14:30:42.207Z</lastmod>
+    <lastmod>2016-06-25T07:55:20.613Z</lastmod>
     <data>
         <display>
         <title>试一下，就试一下</title>
@@ -33,10 +35,34 @@
          
          
            
+             
+              <breadCrumb title="随笔" url="http://yoursite.com/categories/%E9%9A%8F%E7%AC%94/"/>
+          
         </display>
     </data>
     </url>
 
+    
+  <url>
+    <loc>http://yoursite.com/2016/06/23/HTTP%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97%E2%80%94%E2%80%94HTTP-Web%E5%9F%BA%E7%A1%80%EF%BC%881%EF%BC%89/</loc>
+    <lastmod>2016-06-25T07:54:33.063Z</lastmod>
+    <data>
+        <display>
+        <title>HTTP权威指南——HTTP: Web基础（1）</title>
+        <pubTime>2016-06-23T09:34:23.000Z</pubTime>
+        
+        <tag>HTTP</tag>
+         
+         
+           
+             
+              <breadCrumb title="Tech" url="http://yoursite.com/categories/Tech/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
     
     
 </urlset>
