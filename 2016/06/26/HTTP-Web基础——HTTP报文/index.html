@@ -1,0 +1,746 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="HTML," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="报文流HTTP报文是在HTTP应用程序之间发送的数据块。这些数据块以一些文本形式的元信息（meta-information）开头，这些信息描述了报文的内容及含义，后面跟着可选的数据部分。
+报文流入源端服务器HTTP 使用术语流入（ inbound） 和流出（ outbound） 来描述事务处理（ transaction）的方向。
+报文向下游流动不管是请求报文还是响应报文， 所有报文都会向下游( d">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTTP:Web基础——HTTP报文">
+<meta property="og:url" content="http://yoursite.com/2016/06/26/HTTP-Web基础——HTTP报文/index.html">
+<meta property="og:site_name" content="Susie's Blog">
+<meta property="og:description" content="报文流HTTP报文是在HTTP应用程序之间发送的数据块。这些数据块以一些文本形式的元信息（meta-information）开头，这些信息描述了报文的内容及含义，后面跟着可选的数据部分。
+报文流入源端服务器HTTP 使用术语流入（ inbound） 和流出（ outbound） 来描述事务处理（ transaction）的方向。
+报文向下游流动不管是请求报文还是响应报文， 所有报文都会向下游( d">
+<meta property="og:image" content="http://static.zybuluo.com/Eisus/35tx7gwjqffjtn163tdr5i1m/image_1am59sfuprrivg6btbo151gbg9.png">
+<meta property="og:image" content="http://static.zybuluo.com/Eisus/bpw9ifllepyuert9gnw47vxv/image_1am59velvad11vos15v9gic1d71m.png">
+<meta property="og:image" content="http://static.zybuluo.com/Eisus/zrk615sebhsi3akwir5ledei/image_1am5adh9f1uf01tj11rmp10bj16ce13.png">
+<meta property="og:image" content="http://static.zybuluo.com/Eisus/0d47l6q6c802uhj0bifcyhiz/image_1am5af6cc1l4p14701els4oh2le1g.png">
+<meta property="og:image" content="http://static.zybuluo.com/Eisus/e2fjv99rq66aq1iukzf2kx4v/image_1am5agnj2c12m5vof1uul1n772t.png">
+<meta property="og:image" content="http://static.zybuluo.com/Eisus/j6zxez616p7z7xnsgtkke6p2/image_1am5blhcbtn5ea8c21sip1hv247.png">
+<meta property="og:image" content="http://static.zybuluo.com/Eisus/jc2mzkzowfc1xecy4y5rszb4/image_1am5bvi6k17q912v41phnokc1nru4k.png">
+<meta property="og:image" content="http://static.zybuluo.com/Eisus/jzz9xfphq4owp938xxy31t26/image_1am5c1c0r1fo0oht6621ij23qp51.png">
+<meta property="og:image" content="http://static.zybuluo.com/Eisus/sb9fbc80mlpw13vlp8rfbx4e/image_1am5depinp7a1ao71i9i157m1grr7e.png">
+<meta property="og:image" content="http://static.zybuluo.com/Eisus/ezqvx0usg2b5cgr5ugjqv1ib/image_1am5m3d2i120elgqg4q1ter1nicp.png">
+<meta property="og:image" content="http://static.zybuluo.com/Eisus/ulivik8umoaj2nkt35zbnlop/image_1am5mcdrg19ha9qrfpvsf51php2m.png">
+<meta property="og:image" content="http://static.zybuluo.com/Eisus/88kjx39um9atga43kw9j25tx/2016-06-26_143401.jpg">
+<meta property="og:image" content="http://static.zybuluo.com/Eisus/qows0w2hxtsx4zbuizbaa1kd/image_1am5n55sk1v8k140jnu9133e1j0b5u.png">
+<meta property="og:image" content="http://static.zybuluo.com/Eisus/l1hxzf0w1kmbkekflmi21pgu/ScreenShot00001.png">
+<meta property="og:image" content="http://static.zybuluo.com/Eisus/wg87po3446nzedqkyw1c2erh/ScreenShot00003.png">
+<meta property="og:image" content="http://static.zybuluo.com/Eisus/wraif9vn5d7ohi0472pk6sgp/ScreenShot00004.png">
+<meta property="og:image" content="http://static.zybuluo.com/Eisus/6vh0zrdf2eo1v1igi35n7njp/ScreenShot00005.png">
+<meta property="og:image" content="http://static.zybuluo.com/Eisus/lphalhmb1dx99ti480sfgowh/ScreenShot00006.png">
+<meta property="og:image" content="http://static.zybuluo.com/Eisus/e778c7a80tz5kofckqxcmcec/ScreenShot00008.png">
+<meta property="og:image" content="http://static.zybuluo.com/Eisus/lkyusv5u2camx15gwzgdsemz/ScreenShot00009.png">
+<meta property="og:image" content="http://static.zybuluo.com/Eisus/jrmb3vl0ctxixzmsiwlvsr65/ScreenShot00012.png">
+<meta property="og:image" content="http://static.zybuluo.com/Eisus/iiikraubt146dip7fta9yln0/ScreenShot00013.png">
+<meta property="og:image" content="http://static.zybuluo.com/Eisus/eu1poyiak735wp8e68lp0ry7/ScreenShot00014.png">
+<meta property="og:image" content="http://static.zybuluo.com/Eisus/hwpx7om5btmjo9ym0u231o8c/ScreenShot00015.png">
+<meta property="og:image" content="http://static.zybuluo.com/Eisus/a6chsago2vxruebx3tkvsj3r/ScreenShot00016.png">
+<meta property="og:image" content="http://static.zybuluo.com/Eisus/rzfacllwo9ffg5ytycpe7v3g/ScreenShot00017.png">
+<meta property="og:image" content="http://static.zybuluo.com/Eisus/9wkrcr1zu0mmunv043fpkpf3/ScreenShot00018.png">
+<meta property="og:image" content="http://static.zybuluo.com/Eisus/99dapd2mz4933galphexa9dj/ScreenShot00020.png">
+<meta property="og:image" content="http://static.zybuluo.com/Eisus/okf8axi7l5rs8tsv0wqn7rr3/ScreenShot00021.png">
+<meta property="og:updated_time" content="2016-06-26T08:08:06.800Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HTTP:Web基础——HTTP报文">
+<meta name="twitter:description" content="报文流HTTP报文是在HTTP应用程序之间发送的数据块。这些数据块以一些文本形式的元信息（meta-information）开头，这些信息描述了报文的内容及含义，后面跟着可选的数据部分。
+报文流入源端服务器HTTP 使用术语流入（ inbound） 和流出（ outbound） 来描述事务处理（ transaction）的方向。
+报文向下游流动不管是请求报文还是响应报文， 所有报文都会向下游( d">
+<meta name="twitter:image" content="http://static.zybuluo.com/Eisus/35tx7gwjqffjtn163tdr5i1m/image_1am59sfuprrivg6btbo151gbg9.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/06/26/HTTP-Web基础——HTTP报文/"/>
+
+  <title> HTTP:Web基础——HTTP报文 | Susie's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Susie's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">The life is tough, but I'm tougher</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                HTTP:Web基础——HTTP报文
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-26T16:04:41+08:00" content="2016-06-26">
+              2016-06-26
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Tech/" itemprop="url" rel="index">
+                    <span itemprop="name">Tech</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/06/26/HTTP-Web基础——HTTP报文/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/26/HTTP-Web基础——HTTP报文/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+	     <span>&nbsp; | &nbsp;
+             <span id="busuanzi_value_page_pv" ></span> view.
+             </span>    
+          
+
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="报文流"><a href="#报文流" class="headerlink" title="报文流"></a>报文流</h2><p>HTTP报文是在HTTP应用程序之间发送的数据块。这些数据块以一些文本形式的元信息（meta-information）开头，这些信息描述了报文的内容及含义，后面跟着可选的数据部分。</p>
+<h3 id="报文流入源端服务器"><a href="#报文流入源端服务器" class="headerlink" title="报文流入源端服务器"></a>报文流入源端服务器</h3><p>HTTP 使用术语流入（ inbound） 和流出（ outbound） 来描述事务处理（ transaction）的方向。<br><img src="http://static.zybuluo.com/Eisus/35tx7gwjqffjtn163tdr5i1m/image_1am59sfuprrivg6btbo151gbg9.png" alt="image_1am59sfuprrivg6btbo151gbg9.png-38.3kB"></p>
+<h3 id="报文向下游流动"><a href="#报文向下游流动" class="headerlink" title="报文向下游流动"></a>报文向下游流动</h3><p>不管是请求报文还是响应报文， 所有报文都会向下游( downstream）流动。<strong>所有报文的发送者都在接收者的上游（ upstream）</strong>。<br><img src="http://static.zybuluo.com/Eisus/bpw9ifllepyuert9gnw47vxv/image_1am59velvad11vos15v9gic1d71m.png" alt="image_1am59velvad11vos15v9gic1d71m.png-69.8kB"></p>
+<h2 id="报文的组成部分"><a href="#报文的组成部分" class="headerlink" title="报文的组成部分"></a>报文的组成部分</h2><p>HTTP报文是简单的格式化数据块。每条报文都包含一条来自客户端的请求，或者一条来自服务器的响应。它们由三个部分组成： 对报文进行描述的<strong>起始行</strong>（ start line）、 包含属性的<strong>首部</strong>（ header） 块， 以及可选的、 包含数据的<strong>主体</strong>（ body） 部分。<br>起始行和首部就是由行分隔的 ASCII 文本。实体的主体或报文的主体（ 或者就称为主体）是一个可选的数据块。 与起始行和首部不同的是，主体中可以包含文本或二进制数据，也可以为空。</p>
+<h3 id="报文的语法"><a href="#报文的语法" class="headerlink" title="报文的语法"></a>报文的语法</h3><p>所有的 HTTP 报文都可以分为两类： 请求报文（ request message）和响应报文（ response message）。 请求报文会向Web服务器请求一个动作。响应报文会将请求的结果返回给客户端。请求和响应报文的基本报文结构相。<br><img src="http://static.zybuluo.com/Eisus/zrk615sebhsi3akwir5ledei/image_1am5adh9f1uf01tj11rmp10bj16ce13.png" alt="image_1am5adh9f1uf01tj11rmp10bj16ce13.png-78.7kB"><br>请求报文的格式：<br><img src="http://static.zybuluo.com/Eisus/0d47l6q6c802uhj0bifcyhiz/image_1am5af6cc1l4p14701els4oh2le1g.png" alt="image_1am5af6cc1l4p14701els4oh2le1g.png-8.5kB"><br>响应报文的格式：<br><img src="http://static.zybuluo.com/Eisus/e2fjv99rq66aq1iukzf2kx4v/image_1am5agnj2c12m5vof1uul1n772t.png" alt="image_1am5agnj2c12m5vof1uul1n772t.png-8.6kB"></p>
+<ul>
+<li>方法 (method)<br>客户端希望服务器对资源执行的动作。</li>
+<li>请求URL (request-URL)<br>命名了所请求资源， 或者 URL路径组件的完整 URL。 </li>
+<li>版本 (version)<br>报文所使用的HTTP版本</li>
+<li>状态码 (status-code)<br>三位数字描述了请求过程中所发生的情况。每个状态码的第一位数字都用于描述状态的一般类别(“成功”“出错”等)。</li>
+<li>原因短语 (status-code)<br>数字状态码的可读版本，包含行终止序列之前的所有文本。 </li>
+<li>首部 (header)<br>可以有零个或多个首部，每个首部都包含一个名字， 后面跟着一个冒号（:）， 然后是一个可选的空格，接着是一个值， <strong>最后是一个 CRLF</strong>。  </li>
+<li>实体的主体部分 (entity-body)<br>实体的主体部分包含一个由任意数据组成的数据块。并不是所有的报文都包含实体的主体部分， 有时报文只是以一个 CRLF 结束。<br><strong>注意：</strong>一组 HTTP首部总是应该以一个空行（ 仅有CRLF） 结束， 甚至即使没有首部和实体的主体部分应如此。 但由于历史原因，很多客户端和服务器都在没有实体的主体部分时，（错误地） 省略了最后的CRLF。为了与这些流行但不符合规则的实现进行互通，客户端和服务器都应该接受那些没有最后那个 CRLF 的报文。  </li>
+</ul>
+<h3 id="起始行"><a href="#起始行" class="headerlink" title="起始行"></a>起始行</h3><p>请求报文的起始行说明了要做些什么。响应报文的起始行说明发生了什么。</p>
+<ol>
+<li>请求行<br>请求报文请求服务器对资源进行一些操作。包含了一个方法和一个请求 URL， 这个方法描述了服务器应该执行的操作， 请求 URL描述了要对哪个资源执行这个方法。 请求行中还包含HTTP的版本， 用来告知服务器， 客户端使用的是哪种HTTP。</li>
+<li>响应行<br>响应报文承载了状态信息和操作产生的所有结果数据，将其返回给客户端。包含了响应报文使用的 HTTP 版本、数字状态码，以及描述操作状态的文本形式的原因短语。</li>
+<li>方法<br><img src="http://static.zybuluo.com/Eisus/j6zxez616p7z7xnsgtkke6p2/image_1am5blhcbtn5ea8c21sip1hv247.png" alt="image_1am5blhcbtn5ea8c21sip1hv247.png-69.5kB"><br><strong>注意：只有POST和PUT方法包含主体</strong></li>
+<li>状态码<br>方法是用来告诉服务器做什么事情的，状态码则用来告诉客户端，发生了什么事情。<br>可以通过三位数字代码对不同状态码进行分类。 <strong>200 到 299</strong>之间的状态码表示成功。<strong>300 到 399</strong>之间的代码表示资源已经被移走了。<strong>400 到 499</strong> 之间的代码表示客户端的请求出错了。 <strong>500 到 599</strong>之间的代码表示服务器出错了。<br><img src="http://static.zybuluo.com/Eisus/jc2mzkzowfc1xecy4y5rszb4/image_1am5bvi6k17q912v41phnokc1nru4k.png" alt="image_1am5bvi6k17q912v41phnokc1nru4k.png-29kB"><br>最常见状态码：<br><img src="http://static.zybuluo.com/Eisus/jzz9xfphq4owp938xxy31t26/image_1am5c1c0r1fo0oht6621ij23qp51.png" alt="image_1am5c1c0r1fo0oht6621ij23qp51.png-37.8kB"></li>
+<li>原因短语<br>原因短语是响应起始行中的最后一个组件。它为状态码提供了文本形式的解释。</li>
+<li>版本号<br>使用版本号的目的是为使用HTTP的应用程序提供一种线索，以便互相了解对方的能力和报文格式。版本号说明了应用程序支持的最高HTTP版本。</li>
+</ol>
+<h3 id="首部"><a href="#首部" class="headerlink" title="首部"></a>首部</h3><p>HTTP 首部字段向请求和响应报文中添加了一些附加信息。本质上来说，它们只是一些名 / 值对的列表。<br>首部分类：</p>
+<ul>
+<li>通用首部： 即可在请求报文中，也可在响应报文中。</li>
+<li>请求首部</li>
+<li>响应首部</li>
+<li>实体首部</li>
+<li>扩展首部<br>常见首部：<br><img src="http://static.zybuluo.com/Eisus/sb9fbc80mlpw13vlp8rfbx4e/image_1am5depinp7a1ao71i9i157m1grr7e.png" alt="image_1am5depinp7a1ao71i9i157m1grr7e.png-48.3kB"></li>
+</ul>
+<h3 id="实体的主体部分"><a href="#实体的主体部分" class="headerlink" title="实体的主体部分"></a>实体的主体部分</h3><p>HTTP 报文的第三部分是可选的实体主体部分。 实体的主体是HTTP报文的负荷。就是 HTTP要传输的内容。HTTP报文可以承载很多类型的数字数据：图片、视频、 HTML 文档、 软件应用程序、信用卡事务、 电子邮件等。</p>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><h3 id="安全方法"><a href="#安全方法" class="headerlink" title="安全方法"></a>安全方法</h3><p>HTTP 定义了一组被称为安全方法的方法。GET方法和HEAD方法都被认为是安全的， 这就意味着使用 GET或HEAD方法的HTTP请求都不会产生什么动作。不产生动作， 在这里意味着 HTTP 请求不会在服务器上产生什么结果。</p>
+<h3 id="GET"><a href="#GET" class="headerlink" title="GET"></a>GET</h3><p>最常用。用于请求服务器发送某个资源。<br><img src="http://static.zybuluo.com/Eisus/ezqvx0usg2b5cgr5ugjqv1ib/image_1am5m3d2i120elgqg4q1ter1nicp.png" alt="image_1am5m3d2i120elgqg4q1ter1nicp.png-36.2kB"></p>
+<h3 id="HEAD"><a href="#HEAD" class="headerlink" title="HEAD"></a>HEAD</h3><p>HEAD方法与GET方法的行为很类似，但服务器在响应中只返回首部。不会返回实体的主体部分。这就允许客户端在未获取实际资源的情况下，对资源的首部进行检查。使用 HEAD， 可以：</p>
+<ul>
+<li>在不获取资源的情况下了解资源的情况</li>
+<li>通过查看响应中的状态码，看看某个对象是否存在</li>
+<li>通过查看首部，测试资源是否被修改了<br><img src="http://static.zybuluo.com/Eisus/ulivik8umoaj2nkt35zbnlop/image_1am5mcdrg19ha9qrfpvsf51php2m.png" alt="image_1am5mcdrg19ha9qrfpvsf51php2m.png-36kB"></li>
+</ul>
+<h3 id="PUT"><a href="#PUT" class="headerlink" title="PUT"></a>PUT</h3><p>PUT 方法会向服务器写入文档。有些发布系统允许用户创建 Web 页面， 并用 PUT 直接将其安装到 Web 服务器上去。<br>PUT 方法的语义就是让服务器用请求的主体部分来创建一个由所请求的URL命名的新文档，或者，如果那个URL已经存在的话， 就用这个主体来替代它。<br><img src="http://static.zybuluo.com/Eisus/88kjx39um9atga43kw9j25tx/2016-06-26_143401.jpg" alt="2016-06-26_143401.jpg-45.4kB"></p>
+<h3 id="POST"><a href="#POST" class="headerlink" title="POST"></a>POST</h3><p>POST 方法起初是用来向服务器输入数据的。实际上，通常会用它来支持HTML的表单。表单中填好的数据通常会被送给服务器，然后由服务器将其发送到它要去的地方。<br><img src="http://static.zybuluo.com/Eisus/qows0w2hxtsx4zbuizbaa1kd/image_1am5n55sk1v8k140jnu9133e1j0b5u.png" alt="image_1am5n55sk1v8k140jnu9133e1j0b5u.png-97.9kB"></p>
+<h3 id="TRACE"><a href="#TRACE" class="headerlink" title="TRACE"></a>TRACE</h3><p>客户端发起一个请求时，这个请求可能要穿过防火墙、代理、网关或其他一些应用程序。每个中间节点都可能会修改原始的 HTTP请求。TRACE方法允许客户端在最终将请求发送给服务器时，看看它变成了什么样子。<br>TRACE 请求会在目的服务器端发起一个“ 环回” 诊断。行程最后一站的服务器会弹回一条 TRACE响应，并在响应主体中携带它收到的原始请求报文。这样客户端就可以查看在所有中间HTTP应用程序组成的请求/响应链上，原始报文是否，以及如何被毁坏或修改过。<br><img src="http://static.zybuluo.com/Eisus/l1hxzf0w1kmbkekflmi21pgu/ScreenShot00001.png" alt="ScreenShot00001.png-59.7kB"><br>TRACE 方法主要用于诊断；也就是说，用于验证请求是否如愿穿过了请求/响应链。 它也是一种很好的工具，可以用来查看代理和其他应用程序对用户请求所产生效果。<br><em>缺点：</em>它假定中间应用程序对各种不同类型请求（不同的方法——GET、HEAD、 POST 等）的处理是相同的。</p>
+<h3 id="OPTIONS"><a href="#OPTIONS" class="headerlink" title="OPTIONS"></a>OPTIONS</h3><p>OPTIONS 方法请求Web服务器告知其支持的各种功能。可以询问服务器通常支持哪些方法 或者对某些特殊资源支持哪些方法。这为客户端应用程序提供了一种手段，<strong>使其不用实际访问那些资源就能判定访问各种资源的最优方式</strong>。<br><img src="http://static.zybuluo.com/Eisus/wg87po3446nzedqkyw1c2erh/ScreenShot00003.png" alt="ScreenShot00003.png-34.1kB"></p>
+<h3 id="DELETE"><a href="#DELETE" class="headerlink" title="DELETE"></a>DELETE</h3><p>请服务器删除请求URL所指定的资源。但是， 客户端应用程序无法保证删除操作一定会被执行。因为HTTP规范允许服务器在不通知客户端的情况下撤销请求。<br><img src="http://static.zybuluo.com/Eisus/wraif9vn5d7ohi0472pk6sgp/ScreenShot00004.png" alt="ScreenShot00004.png-37.3kB"></p>
+<h3 id="扩展方法"><a href="#扩展方法" class="headerlink" title="扩展方法"></a>扩展方法</h3><p>扩展方法指的就是没有在 HTTP/1.1规范中定义的方法。服务器会为它所管理的资源实现一些 HTTP服务， 这些方法为开发者提供了一种扩展这些 HTTP 服务能力的手段。<br><img src="http://static.zybuluo.com/Eisus/6vh0zrdf2eo1v1igi35n7njp/ScreenShot00005.png" alt="ScreenShot00005.png-30.1kB"></p>
+<h2 id="状态码"><a href="#状态码" class="headerlink" title="状态码"></a>状态码</h2><h3 id="100-199——信息性状态码"><a href="#100-199——信息性状态码" class="headerlink" title="100~199——信息性状态码"></a>100~199——信息性状态码</h3><p><img src="http://static.zybuluo.com/Eisus/lphalhmb1dx99ti480sfgowh/ScreenShot00006.png" alt="ScreenShot00006.png-40.8kB"></p>
+<ol>
+<li>客户端与100 Continue<br>如果客户端<strong>在向服务器发送一个实体</strong>， 并且愿意在发送实体之前等待 100 Continue响应，那么，客户端就要发送一个携带了值为<strong>100 Continue 的 Expect</strong>请求首部。如果客户端没有发送实体， 就不应该发送 100 Continue Expect首部，因为这样会使服务器误以为客户端要发送一个实体。</li>
+<li>服务器与100 Continue<br>如果服务器收到了一条带有值为100 Continue 的Expect首部的请求，它会用 100 Continue响应或一条错误码来进行响应。服务器永远也不应该向没有发送100 Continue期望的客户端发送100 Continue 状态码。 </li>
+<li>代理与100 Continue<br>如果代理从客户端收到了一条带有100 Continue 期望的请求,如果代理知道下一跳服务器是 HTTP/1.1兼容的，或者并不知道下一跳服务器与哪个版本兼容，它都应该将Expect首部放在请求中向下转发。如果它知道下一跳服务器只能与HTTP/1.1之前的版本兼容，就应该以417 Expectation Failed 错误进行响应。</li>
+</ol>
+<h3 id="200-299——成功状态码"><a href="#200-299——成功状态码" class="headerlink" title="200~299——成功状态码"></a>200~299——成功状态码</h3><p><img src="http://static.zybuluo.com/Eisus/e778c7a80tz5kofckqxcmcec/ScreenShot00008.png" alt="ScreenShot00008.png-206.2kB"></p>
+<h3 id="300-399——重定向状态码"><a href="#300-399——重定向状态码" class="headerlink" title="300~399——重定向状态码"></a>300~399——重定向状态码</h3><p>重定向状态码要么告知客户端使用替代位置来访问他们所感兴趣的资源， 要么就提供一个替代的响应而不是资源的内容。如果资源已被移动， 可发送一个重定向状态码和一个可选的 Location 首部来告知客户端资源已被移走，以及现在可以在哪里找到它。这样， 浏览器就可以在不打扰使用者的情况下， 透明地转入新的位置了。<br> <img src="http://static.zybuluo.com/Eisus/lkyusv5u2camx15gwzgdsemz/ScreenShot00009.png" alt="ScreenShot00009.png-85.1kB"><br>在对那些包含了重定向状态码的非 HEAD 请求进行响应时， 最好要包含一个实体， 并在实体中包含描述信息和指向（ 多个）重定向URL 的链接。<br><img src="http://static.zybuluo.com/Eisus/jrmb3vl0ctxixzmsiwlvsr65/ScreenShot00012.png" alt="ScreenShot00012.png-62.5kB"><br><img src="http://static.zybuluo.com/Eisus/iiikraubt146dip7fta9yln0/ScreenShot00013.png" alt="ScreenShot00013.png-143.3kB"><br><strong>注意：区别</strong><br>301 永久重定向,告诉客户端以后应从新地址访问.<br>303：对于POST请求，它<em>表示请求已经被处理</em>，客户端可以接着使用GET方法去请求Location里的URI。<br>307：对于POST请求，<em>表示请求还没有被处理</em>，客户端应该向Location里的URI重新发起POST请求。<br>此外还有一个版本的问题。当<em>HTTP/1.0</em> 客户端发起一个POST请求，并在响应中收到302重定向状态码时，它会接受Location首部的重定向URL，并向那个URL发起一个GET请求（而不会像原始请求中那样发起 POST请求）。问题出在HTTP/1.1。HTTP/1.1规范使用303状态码来实现同样的行为（服务器发送303状态码来重定向客户端的POST请求，在它后面跟一个 GET 请求）。为了避开这个问题，HTTP/1.1 规范指出，对于HTTP/1.1客户端，用 307 状态码取代302状态码来进行临时重定向。这样服务器就可以将302状态码保留起来，为HTTP/1.0客户端使用。</p>
+<h3 id="400-499——客户端错误状态码"><a href="#400-499——客户端错误状态码" class="headerlink" title="400~499——客户端错误状态码"></a>400~499——客户端错误状态码</h3><p><img src="http://static.zybuluo.com/Eisus/eu1poyiak735wp8e68lp0ry7/ScreenShot00014.png" alt="ScreenShot00014.png-190kB"><br><img src="http://static.zybuluo.com/Eisus/hwpx7om5btmjo9ym0u231o8c/ScreenShot00015.png" alt="ScreenShot00015.png-160.2kB"></p>
+<h3 id="500-599——服务器错误状态代码"><a href="#500-599——服务器错误状态代码" class="headerlink" title="500~599——服务器错误状态代码"></a>500~599——服务器错误状态代码</h3><p><img src="http://static.zybuluo.com/Eisus/a6chsago2vxruebx3tkvsj3r/ScreenShot00016.png" alt="ScreenShot00016.png-31.5kB"><br><img src="http://static.zybuluo.com/Eisus/rzfacllwo9ffg5ytycpe7v3g/ScreenShot00017.png" alt="ScreenShot00017.png-86.5kB"></p>
+<h2 id="首部-1"><a href="#首部-1" class="headerlink" title="首部"></a>首部</h2><h3 id="通用首部"><a href="#通用首部" class="headerlink" title="通用首部"></a>通用首部</h3><p>提供与报文相关的最基本的信息。<br><img src="http://static.zybuluo.com/Eisus/9wkrcr1zu0mmunv043fpkpf3/ScreenShot00018.png" alt="ScreenShot00018.png-67.3kB"></p>
+<h3 id="请求首部"><a href="#请求首部" class="headerlink" title="请求首部"></a>请求首部</h3><p>只在请求中有意义的首部。用于说明谁或什么在发送请求、请求源自何处，或者客户端的喜好及能力。服务器可以根据请求首部给出的客户端信息，试着为客户端提供更好的响应。</p>
+<h4 id="Accept首部"><a href="#Accept首部" class="headerlink" title="Accept首部"></a>Accept首部</h4><p>Accept 首部为客户端提供了一种将其喜好和能力告知服务器的方式。Accept首部为客户端提供了一种将其喜好和能告知服务器的方式。<br><img src="http://static.zybuluo.com/Eisus/99dapd2mz4933galphexa9dj/ScreenShot00020.png" alt="ScreenShot00020.png-38kB"></p>
+<h4 id="条件请求首部"><a href="#条件请求首部" class="headerlink" title="条件请求首部"></a>条件请求首部</h4><p>客户端希望为请求加上某些限制。<br><img src="http://static.zybuluo.com/Eisus/okf8axi7l5rs8tsv0wqn7rr3/ScreenShot00021.png" alt="ScreenShot00021.png-63.5kB"></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/HTML/" rel="tag">#HTML</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/06/25/HTTP-Web基础——URL与资源/" rel="next" title="HTTP:Web基础——URL与资源">
+                <i class="fa fa-chevron-left"></i> HTTP:Web基础——URL与资源
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/06/26/HTTP-Web基础——HTTP报文/"
+           data-title="HTTP:Web基础——HTTP报文" data-url="http://yoursite.com/2016/06/26/HTTP-Web基础——HTTP报文/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="Susie_Lee" />
+          <p class="site-author-name" itemprop="name">Susie_Lee</p>
+          <p class="site-description motion-element" itemprop="description">It is an ill wind that blows nobody good.</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Eisus" target="_blank" title="GitHut">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  GitHut
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#报文流"><span class="nav-number">1.</span> <span class="nav-text">报文流</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#报文流入源端服务器"><span class="nav-number">1.1.</span> <span class="nav-text">报文流入源端服务器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#报文向下游流动"><span class="nav-number">1.2.</span> <span class="nav-text">报文向下游流动</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#报文的组成部分"><span class="nav-number">2.</span> <span class="nav-text">报文的组成部分</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#报文的语法"><span class="nav-number">2.1.</span> <span class="nav-text">报文的语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#起始行"><span class="nav-number">2.2.</span> <span class="nav-text">起始行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#首部"><span class="nav-number">2.3.</span> <span class="nav-text">首部</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实体的主体部分"><span class="nav-number">2.4.</span> <span class="nav-text">实体的主体部分</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法"><span class="nav-number">3.</span> <span class="nav-text">方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安全方法"><span class="nav-number">3.1.</span> <span class="nav-text">安全方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GET"><span class="nav-number">3.2.</span> <span class="nav-text">GET</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HEAD"><span class="nav-number">3.3.</span> <span class="nav-text">HEAD</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PUT"><span class="nav-number">3.4.</span> <span class="nav-text">PUT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#POST"><span class="nav-number">3.5.</span> <span class="nav-text">POST</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TRACE"><span class="nav-number">3.6.</span> <span class="nav-text">TRACE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OPTIONS"><span class="nav-number">3.7.</span> <span class="nav-text">OPTIONS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DELETE"><span class="nav-number">3.8.</span> <span class="nav-text">DELETE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#扩展方法"><span class="nav-number">3.9.</span> <span class="nav-text">扩展方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#状态码"><span class="nav-number">4.</span> <span class="nav-text">状态码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#100-199——信息性状态码"><span class="nav-number">4.1.</span> <span class="nav-text">100~199——信息性状态码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#200-299——成功状态码"><span class="nav-number">4.2.</span> <span class="nav-text">200~299——成功状态码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#300-399——重定向状态码"><span class="nav-number">4.3.</span> <span class="nav-text">300~399——重定向状态码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#400-499——客户端错误状态码"><span class="nav-number">4.4.</span> <span class="nav-text">400~499——客户端错误状态码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#500-599——服务器错误状态代码"><span class="nav-number">4.5.</span> <span class="nav-text">500~599——服务器错误状态代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#首部-1"><span class="nav-number">5.</span> <span class="nav-text">首部</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#通用首部"><span class="nav-number">5.1.</span> <span class="nav-text">通用首部</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#请求首部"><span class="nav-number">5.2.</span> <span class="nav-text">请求首部</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Accept首部"><span class="nav-number">5.2.1.</span> <span class="nav-text">Accept首部</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#条件请求首部"><span class="nav-number">5.2.2.</span> <span class="nav-text">条件请求首部</span></a></li></ol></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Susie_Lee</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+                     Total view <span id="busuanzi_value_site_pv"></span> &nbsp&nbsp&nbsp
+  You are the No.<span id="busuanzi_value_site_uv"></span> visiter.
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"Eisus"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
