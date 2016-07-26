@@ -84,18 +84,24 @@
 
 
 
-<meta name="description" content="新电脑重新配置visual studio 2015 + opencv 3.0，虽然参考了大量教程，但依旧遇到了各种奇奇怪怪的问题，记录一下，以供参考。配置教程网上很多，不再赘述，主要参考教程有：OpenCV 学习笔记1 — 开发环境配置（win10+VS2015+OpenCV2.4.12）Setting up OpenCV 3.1 in Visual Studio 2015 以下是遇到的主要问题和">
+<meta name="description" content="新电脑重新配置visual studio 2015 + opencv 3.0，虽然参考了大量教程，但依旧遇到了各种奇奇怪怪的问题，记录一下，以供参考。配置教程网上很多，不再赘述，主要参考教程有：
+OpenCV 学习笔记1 — 开发环境配置（win10+VS2015+OpenCV2.4.12）Setting up OpenCV 3.1 in Visual Studio 2015 
+以下是遇到的主要问">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Win10+Visual Studio 2015+OpenCV3.1开发环境配置问题">
 <meta property="og:url" content="http://yoursite.com/2016/07/26/Win10-Visual-Studio-2015-OpenCV3-1开发环境配置问题/index.html">
 <meta property="og:site_name" content="Susie's Blog">
-<meta property="og:description" content="新电脑重新配置visual studio 2015 + opencv 3.0，虽然参考了大量教程，但依旧遇到了各种奇奇怪怪的问题，记录一下，以供参考。配置教程网上很多，不再赘述，主要参考教程有：OpenCV 学习笔记1 — 开发环境配置（win10+VS2015+OpenCV2.4.12）Setting up OpenCV 3.1 in Visual Studio 2015 以下是遇到的主要问题和">
+<meta property="og:description" content="新电脑重新配置visual studio 2015 + opencv 3.0，虽然参考了大量教程，但依旧遇到了各种奇奇怪怪的问题，记录一下，以供参考。配置教程网上很多，不再赘述，主要参考教程有：
+OpenCV 学习笔记1 — 开发环境配置（win10+VS2015+OpenCV2.4.12）Setting up OpenCV 3.1 in Visual Studio 2015 
+以下是遇到的主要问">
 <meta property="og:image" content="http://static.zybuluo.com/Eisus/85gvot6ftaga2w9oz9i6w3od/691431148121019085.jpg">
 <meta property="og:image" content="http://static.zybuluo.com/Eisus/lv8mmyuyt3vm0qwxy5ovcmrn/151122158442764892.png">
-<meta property="og:updated_time" content="2016-07-26T03:43:27.989Z">
+<meta property="og:updated_time" content="2016-07-26T03:44:57.156Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Win10+Visual Studio 2015+OpenCV3.1开发环境配置问题">
-<meta name="twitter:description" content="新电脑重新配置visual studio 2015 + opencv 3.0，虽然参考了大量教程，但依旧遇到了各种奇奇怪怪的问题，记录一下，以供参考。配置教程网上很多，不再赘述，主要参考教程有：OpenCV 学习笔记1 — 开发环境配置（win10+VS2015+OpenCV2.4.12）Setting up OpenCV 3.1 in Visual Studio 2015 以下是遇到的主要问题和">
+<meta name="twitter:description" content="新电脑重新配置visual studio 2015 + opencv 3.0，虽然参考了大量教程，但依旧遇到了各种奇奇怪怪的问题，记录一下，以供参考。配置教程网上很多，不再赘述，主要参考教程有：
+OpenCV 学习笔记1 — 开发环境配置（win10+VS2015+OpenCV2.4.12）Setting up OpenCV 3.1 in Visual Studio 2015 
+以下是遇到的主要问">
 <meta name="twitter:image" content="http://static.zybuluo.com/Eisus/85gvot6ftaga2w9oz9i6w3od/691431148121019085.jpg">
 
 
@@ -332,9 +338,12 @@
       
 
       
-        <p>新电脑重新配置visual studio 2015 + opencv 3.0，虽然参考了大量教程，但依旧遇到了各种奇奇怪怪的问题，记录一下，以供参考。<br>配置教程网上很多，不再赘述，主要参考教程有：<br><a href="http://m.blog.csdn.net/article/details?id=51141555" target="_blank" rel="external">OpenCV 学习笔记1 — 开发环境配置（win10+VS2015+OpenCV2.4.12）</a><br><a href="https://www.youtube.com/watch?v=l4372qtZ4dc" target="_blank" rel="external">Setting up OpenCV 3.1 in Visual Studio 2015 </a><br>以下是遇到的主要问题和解决方法：</p>
-<p><img src="http://static.zybuluo.com/Eisus/85gvot6ftaga2w9oz9i6w3od/691431148121019085.jpg" alt="691431148121019085.jpg-19.8kB"><br>    遇到这个问题首先检查的是<strong>环境变量是否配的正确</strong>，配错了会导致dll文件无法找到。一般配对了就不会有这样的问题产生。环境变量配对了但依旧有dll文件无法找到的问题，可以<strong>考虑自己下载相应文件，然后将其复制到相关目录下</strong>：<br>32位系统：C:\Windows\System32<br>64位系统：C:\Windows\SysWOW64<br>如果问题还未解决，微软官方给的解决方案是<strong>安装microsoft redistributable</strong>，我有尝试，但我的问题并未得到解决，但不失为一种办法可以尝试一下。</p>
-<p><img src="http://static.zybuluo.com/Eisus/lv8mmyuyt3vm0qwxy5ovcmrn/151122158442764892.png" alt="151122158442764892.png-76.8kB"><br>    遇到类似问题，可能是和<strong>opencv版本有关系的</strong>。之前配opencv2.4.13一直出现这个问题，换了opencv3.1之后这个问题就没有了。如果换了版本问题没有得到解决，可以尝试以下方案：<br>方案一：<br><em>Step 1</em>. Open Windows Explorer and navigate to C:\Windows\System32. <em>Step 2</em>: Locate and delete the following files:<br>“xinput1_1.dll”, “xinput1_2.dll”, “xinput1<em>3.dll” and all other files started with xinput1</em><em>.dll.
+        <p>新电脑重新配置visual studio 2015 + opencv 3.0，虽然参考了大量教程，但依旧遇到了各种奇奇怪怪的问题，记录一下，以供参考。<br>配置教程网上很多，不再赘述，主要参考教程有：</p>
+<p><a href="http://m.blog.csdn.net/article/details?id=51141555" target="_blank" rel="external">OpenCV 学习笔记1 — 开发环境配置（win10+VS2015+OpenCV2.4.12）</a><br><a href="https://www.youtube.com/watch?v=l4372qtZ4dc" target="_blank" rel="external">Setting up OpenCV 3.1 in Visual Studio 2015 </a></p>
+<p>以下是遇到的主要问题和解决方法：</p>
+<p><img src="http://static.zybuluo.com/Eisus/85gvot6ftaga2w9oz9i6w3od/691431148121019085.jpg" alt="691431148121019085.jpg-19.8kB"><br>    遇到这个问题首先检查的是<strong>环境变量是否配的正确</strong>，配错了会导致dll文件无法找到。一般配对了就不会有这样的问题产生。环境变量配对了但依旧有dll文件无法找到的问题，可以<strong>考虑自己下载相应文件，然后将其复制到相关目录下</strong>：<br>32位系统：C:\Windows\System32<br>64位系统：C:\Windows\SysWOW64</p>
+<pre><code>如果问题还未解决，微软官方给的解决方案是**安装microsoft redistributable**，我有尝试，但我的问题并未得到解决，但不失为一种办法可以尝试一下。
+</code></pre><p><img src="http://static.zybuluo.com/Eisus/lv8mmyuyt3vm0qwxy5ovcmrn/151122158442764892.png" alt="151122158442764892.png-76.8kB"><br>    遇到类似问题，可能是和<strong>opencv版本有关系的</strong>。之前配opencv2.4.13一直出现这个问题，换了opencv3.1之后这个问题就没有了。如果换了版本问题没有得到解决，可以尝试以下方案：<br>方案一：<br><em>Step 1</em>. Open Windows Explorer and navigate to C:\Windows\System32. <em>Step 2</em>: Locate and delete the following files:<br>“xinput1_1.dll”, “xinput1_2.dll”, “xinput1<em>3.dll” and all other files started with xinput1</em><em>.dll.
 </em>Step 3*: Once the files are deleted, click the link below to download and run the DirectX setup<br>方案二：<br>用dependency walker</p>
 
       
