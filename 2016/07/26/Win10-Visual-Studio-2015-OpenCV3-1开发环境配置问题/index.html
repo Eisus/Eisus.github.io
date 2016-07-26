@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Life," />
+  <meta name="keywords" content="OpenCV," />
 
 
 
@@ -84,30 +84,19 @@
 
 
 
-<meta name="description" content="俗话说，不想当产品的前端就不是好钢琴玩家~
-历经1又1/4天，扒了好多好多篇教程，我的博客终于搭好啦~ 虽然大写的简易，但成就感慢慢啦噜~
-希望用这个博客纪录下，Susie“烩”一切。
-ps. 智华真的是个让人很难理解的地方，二楼的大屏幕里放的不是某工厂爆炸现场，就是火灾现场，昨天是一团大大的被渔网包起来的软软的生物在屏幕上抖动，今天是火山爆发…心好累（摊手）
-还是看看6吧~ 隔空虎摸~ 锵锵，收">
+<meta name="description" content="新电脑重新配置visual studio 2015 + opencv 3.0，虽然参考了大量教程，但依旧遇到了各种奇奇怪怪的问题，记录一下，以供参考。配置教程网上很多，不再赘述，主要参考教程有：OpenCV 学习笔记1 — 开发环境配置（win10+VS2015+OpenCV2.4.12）Setting up OpenCV 3.1 in Visual Studio 2015 以下是遇到的主要问题和">
 <meta property="og:type" content="article">
-<meta property="og:title" content="试一下，就试一下">
-<meta property="og:url" content="http://yoursite.com/2016/06/21/试一下，就试一下/index.html">
+<meta property="og:title" content="Win10+Visual Studio 2015+OpenCV3.1开发环境配置问题">
+<meta property="og:url" content="http://yoursite.com/2016/07/26/Win10-Visual-Studio-2015-OpenCV3-1开发环境配置问题/index.html">
 <meta property="og:site_name" content="Susie's Blog">
-<meta property="og:description" content="俗话说，不想当产品的前端就不是好钢琴玩家~
-历经1又1/4天，扒了好多好多篇教程，我的博客终于搭好啦~ 虽然大写的简易，但成就感慢慢啦噜~
-希望用这个博客纪录下，Susie“烩”一切。
-ps. 智华真的是个让人很难理解的地方，二楼的大屏幕里放的不是某工厂爆炸现场，就是火灾现场，昨天是一团大大的被渔网包起来的软软的生物在屏幕上抖动，今天是火山爆发…心好累（摊手）
-还是看看6吧~ 隔空虎摸~ 锵锵，收">
-<meta property="og:image" content="http://ww3.sinaimg.cn/mw690/7201b089gw1f50eeloetmj20ku0kumzu.jpg">
-<meta property="og:updated_time" content="2016-06-25T07:55:20.613Z">
+<meta property="og:description" content="新电脑重新配置visual studio 2015 + opencv 3.0，虽然参考了大量教程，但依旧遇到了各种奇奇怪怪的问题，记录一下，以供参考。配置教程网上很多，不再赘述，主要参考教程有：OpenCV 学习笔记1 — 开发环境配置（win10+VS2015+OpenCV2.4.12）Setting up OpenCV 3.1 in Visual Studio 2015 以下是遇到的主要问题和">
+<meta property="og:image" content="http://static.zybuluo.com/Eisus/85gvot6ftaga2w9oz9i6w3od/691431148121019085.jpg">
+<meta property="og:image" content="http://static.zybuluo.com/Eisus/lv8mmyuyt3vm0qwxy5ovcmrn/151122158442764892.png">
+<meta property="og:updated_time" content="2016-07-26T03:43:27.989Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="试一下，就试一下">
-<meta name="twitter:description" content="俗话说，不想当产品的前端就不是好钢琴玩家~
-历经1又1/4天，扒了好多好多篇教程，我的博客终于搭好啦~ 虽然大写的简易，但成就感慢慢啦噜~
-希望用这个博客纪录下，Susie“烩”一切。
-ps. 智华真的是个让人很难理解的地方，二楼的大屏幕里放的不是某工厂爆炸现场，就是火灾现场，昨天是一团大大的被渔网包起来的软软的生物在屏幕上抖动，今天是火山爆发…心好累（摊手）
-还是看看6吧~ 隔空虎摸~ 锵锵，收">
-<meta name="twitter:image" content="http://ww3.sinaimg.cn/mw690/7201b089gw1f50eeloetmj20ku0kumzu.jpg">
+<meta name="twitter:title" content="Win10+Visual Studio 2015+OpenCV3.1开发环境配置问题">
+<meta name="twitter:description" content="新电脑重新配置visual studio 2015 + opencv 3.0，虽然参考了大量教程，但依旧遇到了各种奇奇怪怪的问题，记录一下，以供参考。配置教程网上很多，不再赘述，主要参考教程有：OpenCV 学习笔记1 — 开发环境配置（win10+VS2015+OpenCV2.4.12）Setting up OpenCV 3.1 in Visual Studio 2015 以下是遇到的主要问题和">
+<meta name="twitter:image" content="http://static.zybuluo.com/Eisus/85gvot6ftaga2w9oz9i6w3od/691431148121019085.jpg">
 
 
 
@@ -128,9 +117,9 @@ ps. 智华真的是个让人很难理解的地方，二楼的大屏幕里放的�
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/06/21/试一下，就试一下/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/07/26/Win10-Visual-Studio-2015-OpenCV3-1开发环境配置问题/"/>
 
-  <title> 试一下，就试一下 | Susie's Blog </title>
+  <title> Win10+Visual Studio 2015+OpenCV3.1开发环境配置问题 | Susie's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -270,7 +259,7 @@ ps. 智华真的是个让人很难理解的地方，二楼的大屏幕里放的�
             
             
               
-                试一下，就试一下
+                Win10+Visual Studio 2015+OpenCV3.1开发环境配置问题
               
             
           </h1>
@@ -282,8 +271,8 @@ ps. 智华真的是个让人很难理解的地方，二楼的大屏幕里放的�
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-06-21T22:13:25+08:00" content="2016-06-21">
-              2016-06-21
+            <time itemprop="dateCreated" datetime="2016-07-26T11:41:50+08:00" content="2016-07-26">
+              2016-07-26
             </time>
           </span>
 
@@ -296,8 +285,8 @@ ps. 智华真的是个让人很难理解的地方，二楼的大屏幕里放的�
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/随笔/" itemprop="url" rel="index">
-                    <span itemprop="name">随笔</span>
+                  <a href="/categories/Tech/" itemprop="url" rel="index">
+                    <span itemprop="name">Tech</span>
                   </a>
                 </span>
 
@@ -312,8 +301,8 @@ ps. 智华真的是个让人很难理解的地方，二楼的大屏幕里放的�
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/06/21/试一下，就试一下/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/21/试一下，就试一下/" itemprop="commentsCount"></span>
+                <a href="/2016/07/26/Win10-Visual-Studio-2015-OpenCV3-1开发环境配置问题/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/26/Win10-Visual-Studio-2015-OpenCV3-1开发环境配置问题/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -343,11 +332,10 @@ ps. 智华真的是个让人很难理解的地方，二楼的大屏幕里放的�
       
 
       
-        <p>俗话说，不想当产品的前端就不是好钢琴玩家~</p>
-<p>历经1又1/4天，扒了好多好多篇教程，我的博客终于搭好啦~ 虽然大写的简易，但成就感慢慢啦噜~</p>
-<p>希望用这个博客纪录下，Susie“烩”一切。</p>
-<p>ps. 智华真的是个让人很难理解的地方，二楼的大屏幕里放的不是某工厂爆炸现场，就是火灾现场，昨天是一团大大的被渔网包起来的软软的生物在屏幕上抖动，今天是火山爆发…心好累（摊手）</p>
-<p>还是看看6吧~ 隔空虎摸~ 锵锵，收包回宿舍！<img src="http://ww3.sinaimg.cn/mw690/7201b089gw1f50eeloetmj20ku0kumzu.jpg" alt="6岛岛的乖6"></p>
+        <p>新电脑重新配置visual studio 2015 + opencv 3.0，虽然参考了大量教程，但依旧遇到了各种奇奇怪怪的问题，记录一下，以供参考。<br>配置教程网上很多，不再赘述，主要参考教程有：<br><a href="http://m.blog.csdn.net/article/details?id=51141555" target="_blank" rel="external">OpenCV 学习笔记1 — 开发环境配置（win10+VS2015+OpenCV2.4.12）</a><br><a href="https://www.youtube.com/watch?v=l4372qtZ4dc" target="_blank" rel="external">Setting up OpenCV 3.1 in Visual Studio 2015 </a><br>以下是遇到的主要问题和解决方法：</p>
+<p><img src="http://static.zybuluo.com/Eisus/85gvot6ftaga2w9oz9i6w3od/691431148121019085.jpg" alt="691431148121019085.jpg-19.8kB"><br>    遇到这个问题首先检查的是<strong>环境变量是否配的正确</strong>，配错了会导致dll文件无法找到。一般配对了就不会有这样的问题产生。环境变量配对了但依旧有dll文件无法找到的问题，可以<strong>考虑自己下载相应文件，然后将其复制到相关目录下</strong>：<br>32位系统：C:\Windows\System32<br>64位系统：C:\Windows\SysWOW64<br>如果问题还未解决，微软官方给的解决方案是<strong>安装microsoft redistributable</strong>，我有尝试，但我的问题并未得到解决，但不失为一种办法可以尝试一下。</p>
+<p><img src="http://static.zybuluo.com/Eisus/lv8mmyuyt3vm0qwxy5ovcmrn/151122158442764892.png" alt="151122158442764892.png-76.8kB"><br>    遇到类似问题，可能是和<strong>opencv版本有关系的</strong>。之前配opencv2.4.13一直出现这个问题，换了opencv3.1之后这个问题就没有了。如果换了版本问题没有得到解决，可以尝试以下方案：<br>方案一：<br><em>Step 1</em>. Open Windows Explorer and navigate to C:\Windows\System32. <em>Step 2</em>: Locate and delete the following files:<br>“xinput1_1.dll”, “xinput1_2.dll”, “xinput1<em>3.dll” and all other files started with xinput1</em><em>.dll.
+</em>Step 3*: Once the files are deleted, click the link below to download and run the DirectX setup<br>方案二：<br>用dependency walker</p>
 
       
     </div>
@@ -369,7 +357,7 @@ ps. 智华真的是个让人很难理解的地方，二楼的大屏幕里放的�
       
         <div class="post-tags">
           
-            <a href="/tags/Life/" rel="tag">#Life</a>
+            <a href="/tags/OpenCV/" rel="tag">#OpenCV</a>
           
         </div>
       
@@ -378,13 +366,13 @@ ps. 智华真的是个让人很难理解的地方，二楼的大屏幕里放的�
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/07/14/VR设备输入方式总结与对比/" rel="next" title="VR设备输入方式总结与对比">
+                <i class="fa fa-chevron-left"></i> VR设备输入方式总结与对比
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/06/23/HTTP权威指南——HTTP-Web基础（1）/" rel="prev" title="HTTP权威指南——HTTP: Web基础（1）">
-                HTTP权威指南——HTTP: Web基础（1） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -410,8 +398,8 @@ ps. 智华真的是个让人很难理解的地方，二楼的大屏幕里放的�
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/06/21/试一下，就试一下/"
-           data-title="试一下，就试一下" data-url="http://yoursite.com/2016/06/21/试一下，就试一下/">
+      <div class="ds-thread" data-thread-key="2016/07/26/Win10-Visual-Studio-2015-OpenCV3-1开发环境配置问题/"
+           data-title="Win10+Visual Studio 2015+OpenCV3.1开发环境配置问题" data-url="http://yoursite.com/2016/07/26/Win10-Visual-Studio-2015-OpenCV3-1开发环境配置问题/">
       </div>
     
   </div>
