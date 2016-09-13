@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Life," />
+  <meta name="keywords" content="JavaScript," />
 
 
 
@@ -84,28 +84,19 @@
 
 
 
-<meta name="description" content="好久没记录了~ 主要最近忙到不要不要的，但忙并超级充实和快乐着，所以记录一下最近的进展。
-忙，所以作息各种不规律，为了身体坚持基本每天早上3-4km和一个小冲刺，爽到不行，一整天的精神都会很好，继续坚持~
-结合W3和codecademy把CSS、JS部分边敲边温习总结了一遍~~本想用电脑总结来着，但还是手写的思路更清楚一些。成果如下：其实最大的感触还是英文教程要比中文教程清楚好多，还有codeca">
+<meta name="description" content="把脚本放在head中，脚本加载导致的延迟可通过一下方式解决：解决1： js引用放在元素中页面内容后解决2：HTML4.01定义了defer属性1&amp;lt;script type=&quot;text/javascript&quot; defer=&quot;defer&quot; src=&quot;eg1.js&quot;&amp;gt;&amp;lt;/script&amp;gt;
+脚本会延迟到整个页面解析完毕后在运行。同时，defer也保证第一个延迟脚本先于第二个延迟脚本此外">
 <meta property="og:type" content="article">
-<meta property="og:title" content="近期进度总结">
-<meta property="og:url" content="http://yoursite.com/2016/07/29/近期进度总结/index.html">
+<meta property="og:title" content="在HTML中使用JS的注意事项">
+<meta property="og:url" content="http://yoursite.com/2016/08/13/在HTML中使用JS的注意事项/index.html">
 <meta property="og:site_name" content="Susie's Blog">
-<meta property="og:description" content="好久没记录了~ 主要最近忙到不要不要的，但忙并超级充实和快乐着，所以记录一下最近的进展。
-忙，所以作息各种不规律，为了身体坚持基本每天早上3-4km和一个小冲刺，爽到不行，一整天的精神都会很好，继续坚持~
-结合W3和codecademy把CSS、JS部分边敲边温习总结了一遍~~本想用电脑总结来着，但还是手写的思路更清楚一些。成果如下：其实最大的感触还是英文教程要比中文教程清楚好多，还有codeca">
-<meta property="og:image" content="http://static.zybuluo.com/Eisus/tw7p7lrrqxyrwpaz5s8dk086/918002106337886297.jpg">
-<meta property="og:image" content="http://static.zybuluo.com/Eisus/b4j66x194z4zstezcglajmgx/846098850314148868.jpg">
-<meta property="og:image" content="http://static.zybuluo.com/Eisus/vzqkhe10pr7hhckxtjymmfav/ScreenShot00031.jpg">
-<meta property="og:image" content="http://static.zybuluo.com/Eisus/ago7f5vo99ep5ak6xhbib6k0/ScreenShot00033.jpg">
-<meta property="og:image" content="http://static.zybuluo.com/Eisus/1a5x5fktl8he9wbf7kqhqpwz/ScreenShot00032.jpg">
-<meta property="og:updated_time" content="2016-07-28T18:24:37.634Z">
+<meta property="og:description" content="把脚本放在head中，脚本加载导致的延迟可通过一下方式解决：解决1： js引用放在元素中页面内容后解决2：HTML4.01定义了defer属性1&amp;lt;script type=&quot;text/javascript&quot; defer=&quot;defer&quot; src=&quot;eg1.js&quot;&amp;gt;&amp;lt;/script&amp;gt;
+脚本会延迟到整个页面解析完毕后在运行。同时，defer也保证第一个延迟脚本先于第二个延迟脚本此外">
+<meta property="og:updated_time" content="2016-09-13T16:02:45.918Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="近期进度总结">
-<meta name="twitter:description" content="好久没记录了~ 主要最近忙到不要不要的，但忙并超级充实和快乐着，所以记录一下最近的进展。
-忙，所以作息各种不规律，为了身体坚持基本每天早上3-4km和一个小冲刺，爽到不行，一整天的精神都会很好，继续坚持~
-结合W3和codecademy把CSS、JS部分边敲边温习总结了一遍~~本想用电脑总结来着，但还是手写的思路更清楚一些。成果如下：其实最大的感触还是英文教程要比中文教程清楚好多，还有codeca">
-<meta name="twitter:image" content="http://static.zybuluo.com/Eisus/tw7p7lrrqxyrwpaz5s8dk086/918002106337886297.jpg">
+<meta name="twitter:title" content="在HTML中使用JS的注意事项">
+<meta name="twitter:description" content="把脚本放在head中，脚本加载导致的延迟可通过一下方式解决：解决1： js引用放在元素中页面内容后解决2：HTML4.01定义了defer属性1&amp;lt;script type=&quot;text/javascript&quot; defer=&quot;defer&quot; src=&quot;eg1.js&quot;&amp;gt;&amp;lt;/script&amp;gt;
+脚本会延迟到整个页面解析完毕后在运行。同时，defer也保证第一个延迟脚本先于第二个延迟脚本此外">
 
 
 
@@ -126,9 +117,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/07/29/近期进度总结/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/08/13/在HTML中使用JS的注意事项/"/>
 
-  <title> 近期进度总结 | Susie's Blog </title>
+  <title> 在HTML中使用JS的注意事项 | Susie's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -268,7 +259,7 @@
             
             
               
-                近期进度总结
+                在HTML中使用JS的注意事项
               
             
           </h1>
@@ -280,8 +271,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-29T02:23:29+08:00" content="2016-07-29">
-              2016-07-29
+            <time itemprop="dateCreated" datetime="2016-08-13T21:26:06+08:00" content="2016-08-13">
+              2016-08-13
             </time>
           </span>
 
@@ -294,8 +285,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Life/" itemprop="url" rel="index">
-                    <span itemprop="name">Life</span>
+                  <a href="/categories/Tech/" itemprop="url" rel="index">
+                    <span itemprop="name">Tech</span>
                   </a>
                 </span>
 
@@ -310,8 +301,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/07/29/近期进度总结/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/29/近期进度总结/" itemprop="commentsCount"></span>
+                <a href="/2016/08/13/在HTML中使用JS的注意事项/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/13/在HTML中使用JS的注意事项/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -341,16 +332,10 @@
       
 
       
-        <p>好久没记录了~ 主要最近忙到不要不要的，但忙并超级充实和快乐着，所以记录一下最近的进展。</p>
-<p>忙，所以作息各种不规律，为了身体坚持基本每天早上3-4km和一个小冲刺，爽到不行，一整天的精神都会很好，继续坚持~</p>
-<p>结合W3和codecademy把CSS、JS部分边敲边温习总结了一遍~~本想用电脑总结来着，但还是手写的思路更清楚一些。成果如下：<br><img src="http://static.zybuluo.com/Eisus/tw7p7lrrqxyrwpaz5s8dk086/918002106337886297.jpg" alt="918002106337886297.jpg-6686.9kB"><br><img src="http://static.zybuluo.com/Eisus/b4j66x194z4zstezcglajmgx/846098850314148868.jpg" alt="846098850314148868.jpg-6138.2kB"><br>其实最大的感触还是英文教程要比中文教程清楚好多，还有codecademy简直神奇，尤其是pro账户的project功能，棒呆了。</p>
-<p>用了三种较为简单的算法对视频中手进行了检测，检测结果分别如下：<br><img src="http://static.zybuluo.com/Eisus/vzqkhe10pr7hhckxtjymmfav/ScreenShot00031.jpg" alt="ScreenShot00031.jpg-108kB"><br><img src="http://static.zybuluo.com/Eisus/ago7f5vo99ep5ak6xhbib6k0/ScreenShot00033.jpg" alt="ScreenShot00033.jpg-107.9kB"><br><img src="http://static.zybuluo.com/Eisus/1a5x5fktl8he9wbf7kqhqpwz/ScreenShot00032.jpg" alt="ScreenShot00032.jpg-83.2kB"><br>这三种方法分别是：</p>
-<ol>
-<li>选择视频第一帧作为固定背景进行背景相消，视频进行过程中不对北京进行更新，同时对相消之后的结果做腐蚀膨胀等处理。</li>
-<li>依旧选择视频第一帧作为最初的背景，视频过程中，用当前帧和用作消减的背景的加权均值更新背景，同样进行腐蚀膨胀等处理。</li>
-<li>选择opencv内部函数，直接进行背景相消。</li>
-</ol>
-<p>接下来打算继续刷W3和codecademy，加速加速~~ 坚持跑步~~ 视频检测算法并且标注出指尖坐标值。感觉棒棒哒~~</p>
+        <p>把脚本放在head中，脚本加载导致的延迟可通过一下方式解决：<br><strong>解决1</strong>： js引用放在<body>元素中页面内容后<br><strong>解决2</strong>：HTML4.01定义了defer属性<br><!--lang:html--><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">defer</span>=<span class="string">"defer"</span> <span class="attr">src</span>=<span class="string">"eg1.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></body></p>
+<p>脚本会延迟到整个页面解析完毕后在运行。同时，defer也保证第一个延迟脚本先于第二个延迟脚本<br>此外，script还有一个async属性，表示脚本不必等待其他脚本，也不必阻塞文档的呈现。不能保证异步脚本按照它们在页面中出现的顺序执行</p>
+<p>使用外部文件来包含js代码的优点：可维护性，可缓存，适应未来。</p>
+<p><strong>文档模式：</strong>通过doctype来实现切换的。标准模式，混杂模式。主要会影响css内容的呈现，也会影响js的解析。如果在文档开始时，没有文档类型声明，会开启混杂模式。</p>
 
       
     </div>
@@ -372,7 +357,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Life/" rel="tag">#Life</a>
+            <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
           
         </div>
       
@@ -381,16 +366,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/07/26/Win10-Visual-Studio-2015-OpenCV3-1开发环境配置问题/" rel="next" title="Win10+Visual Studio 2015+OpenCV3.1开发环境配置问题">
-                <i class="fa fa-chevron-left"></i> Win10+Visual Studio 2015+OpenCV3.1开发环境配置问题
+              <a href="/2016/07/29/近期进度总结/" rel="next" title="近期进度总结">
+                <i class="fa fa-chevron-left"></i> 近期进度总结
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/08/13/在HTML中使用JS的注意事项/" rel="prev" title="在HTML中使用JS的注意事项">
-                在HTML中使用JS的注意事项 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/09/13/关于闭包-循环-块级作用域的碎碎念/" rel="prev" title="关于闭包 & 循环 & 块级作用域的碎碎念">
+                关于闭包 & 循环 & 块级作用域的碎碎念 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -417,8 +402,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/07/29/近期进度总结/"
-           data-title="近期进度总结" data-url="http://yoursite.com/2016/07/29/近期进度总结/">
+      <div class="ds-thread" data-thread-key="2016/08/13/在HTML中使用JS的注意事项/"
+           data-title="在HTML中使用JS的注意事项" data-url="http://yoursite.com/2016/08/13/在HTML中使用JS的注意事项/">
       </div>
     
   </div>
