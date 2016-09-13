@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Life," />
+  <meta name="keywords" content="CSSS," />
 
 
 
@@ -84,30 +84,25 @@
 
 
 
-<meta name="description" content="俗话说，不想当产品的前端就不是好钢琴玩家~
-历经1又1/4天，扒了好多好多篇教程，我的博客终于搭好啦~ 虽然大写的简易，但成就感慢慢啦噜~
-希望用这个博客纪录下，Susie“烩”一切。
-ps. 智华真的是个让人很难理解的地方，二楼的大屏幕里放的不是某工厂爆炸现场，就是火灾现场，昨天是一团大大的被渔网包起来的软软的生物在屏幕上抖动，今天是火山爆发…心好累（摊手）
-还是看看6吧~ 隔空虎摸~ 锵锵，收">
+<meta name="description" content="原因： 会有高度塌陷的问题，需要通过清除浮动解决高度塌陷。
+方法一： 在container最下面添加一个空的标签：1&amp;lt;div style=&quot;clear: both&quot;&amp;gt;&amp;lt;/div&amp;gt;
+缺点： 添加了一个空标签，违背了web结构和表现分离的精髓，这种标签很多，后期维护非常不容易。现在不再使用
+方法二：给container添加一个 overflow: auto/hidden；会让浮">
 <meta property="og:type" content="article">
-<meta property="og:title" content="试一下，就试一下">
-<meta property="og:url" content="http://yoursite.com/2016/06/21/试一下，就试一下/index.html">
+<meta property="og:title" content="清除浮动小小记">
+<meta property="og:url" content="http://yoursite.com/2016/09/14/清除浮动小小记/index.html">
 <meta property="og:site_name" content="Susie's Blog">
-<meta property="og:description" content="俗话说，不想当产品的前端就不是好钢琴玩家~
-历经1又1/4天，扒了好多好多篇教程，我的博客终于搭好啦~ 虽然大写的简易，但成就感慢慢啦噜~
-希望用这个博客纪录下，Susie“烩”一切。
-ps. 智华真的是个让人很难理解的地方，二楼的大屏幕里放的不是某工厂爆炸现场，就是火灾现场，昨天是一团大大的被渔网包起来的软软的生物在屏幕上抖动，今天是火山爆发…心好累（摊手）
-还是看看6吧~ 隔空虎摸~ 锵锵，收">
-<meta property="og:image" content="http://ww3.sinaimg.cn/mw690/7201b089gw1f50eeloetmj20ku0kumzu.jpg">
-<meta property="og:updated_time" content="2016-06-25T07:55:20.613Z">
+<meta property="og:description" content="原因： 会有高度塌陷的问题，需要通过清除浮动解决高度塌陷。
+方法一： 在container最下面添加一个空的标签：1&amp;lt;div style=&quot;clear: both&quot;&amp;gt;&amp;lt;/div&amp;gt;
+缺点： 添加了一个空标签，违背了web结构和表现分离的精髓，这种标签很多，后期维护非常不容易。现在不再使用
+方法二：给container添加一个 overflow: auto/hidden；会让浮">
+<meta property="og:updated_time" content="2016-09-13T16:26:11.836Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="试一下，就试一下">
-<meta name="twitter:description" content="俗话说，不想当产品的前端就不是好钢琴玩家~
-历经1又1/4天，扒了好多好多篇教程，我的博客终于搭好啦~ 虽然大写的简易，但成就感慢慢啦噜~
-希望用这个博客纪录下，Susie“烩”一切。
-ps. 智华真的是个让人很难理解的地方，二楼的大屏幕里放的不是某工厂爆炸现场，就是火灾现场，昨天是一团大大的被渔网包起来的软软的生物在屏幕上抖动，今天是火山爆发…心好累（摊手）
-还是看看6吧~ 隔空虎摸~ 锵锵，收">
-<meta name="twitter:image" content="http://ww3.sinaimg.cn/mw690/7201b089gw1f50eeloetmj20ku0kumzu.jpg">
+<meta name="twitter:title" content="清除浮动小小记">
+<meta name="twitter:description" content="原因： 会有高度塌陷的问题，需要通过清除浮动解决高度塌陷。
+方法一： 在container最下面添加一个空的标签：1&amp;lt;div style=&quot;clear: both&quot;&amp;gt;&amp;lt;/div&amp;gt;
+缺点： 添加了一个空标签，违背了web结构和表现分离的精髓，这种标签很多，后期维护非常不容易。现在不再使用
+方法二：给container添加一个 overflow: auto/hidden；会让浮">
 
 
 
@@ -128,9 +123,9 @@ ps. 智华真的是个让人很难理解的地方，二楼的大屏幕里放的�
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/06/21/试一下，就试一下/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/09/14/清除浮动小小记/"/>
 
-  <title> 试一下，就试一下 | Susie's Blog </title>
+  <title> 清除浮动小小记 | Susie's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -270,7 +265,7 @@ ps. 智华真的是个让人很难理解的地方，二楼的大屏幕里放的�
             
             
               
-                试一下，就试一下
+                清除浮动小小记
               
             
           </h1>
@@ -282,8 +277,8 @@ ps. 智华真的是个让人很难理解的地方，二楼的大屏幕里放的�
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-06-21T22:13:25+08:00" content="2016-06-21">
-              2016-06-21
+            <time itemprop="dateCreated" datetime="2016-09-14T00:24:34+08:00" content="2016-09-14">
+              2016-09-14
             </time>
           </span>
 
@@ -296,8 +291,8 @@ ps. 智华真的是个让人很难理解的地方，二楼的大屏幕里放的�
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/随笔/" itemprop="url" rel="index">
-                    <span itemprop="name">随笔</span>
+                  <a href="/categories/Tech/" itemprop="url" rel="index">
+                    <span itemprop="name">Tech</span>
                   </a>
                 </span>
 
@@ -312,8 +307,8 @@ ps. 智华真的是个让人很难理解的地方，二楼的大屏幕里放的�
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/06/21/试一下，就试一下/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/21/试一下，就试一下/" itemprop="commentsCount"></span>
+                <a href="/2016/09/14/清除浮动小小记/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/14/清除浮动小小记/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -343,11 +338,14 @@ ps. 智华真的是个让人很难理解的地方，二楼的大屏幕里放的�
       
 
       
-        <p>俗话说，不想当产品的前端就不是好钢琴玩家~</p>
-<p>历经1又1/4天，扒了好多好多篇教程，我的博客终于搭好啦~ 虽然大写的简易，但成就感慢慢啦噜~</p>
-<p>希望用这个博客纪录下，Susie“烩”一切。</p>
-<p>ps. 智华真的是个让人很难理解的地方，二楼的大屏幕里放的不是某工厂爆炸现场，就是火灾现场，昨天是一团大大的被渔网包起来的软软的生物在屏幕上抖动，今天是火山爆发…心好累（摊手）</p>
-<p>还是看看6吧~ 隔空虎摸~ 锵锵，收包回宿舍！<img src="http://ww3.sinaimg.cn/mw690/7201b089gw1f50eeloetmj20ku0kumzu.jpg" alt="6岛岛的乖6"></p>
+        <p>原因： 会有高度塌陷的问题，需要通过清除浮动解决高度塌陷。</p>
+<p><strong>方法一</strong>： 在container最下面添加一个空的标签：<br><!--lang:html--><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"clear: both"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p><em>缺点</em>： 添加了一个空标签，违背了web结构和表现分离的精髓，这种标签很多，后期维护非常不容易。现在不再使用</p>
+<p><strong>方法二</strong>：给container添加一个 overflow: auto/hidden；会让浮动元素回到容器层</p>
+<p><strong>方法三</strong>： 给父容器增加浮动属性，eg. float: left;<br><em>缺点</em>： 影响了整个页面的布局，如果父元素还有父元素，不能让整个页面建立在浮动基础上</p>
+<p><strong>方法四：</strong><br>现在最常用，给container增加一个clearfix，使用after伪元素。<br><!--lang:html--><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.clearfix:after&#123;</span><br><span class="line">    content: ".";</span><br><span class="line">    display: block;</span><br><span class="line">    height: 0;</span><br><span class="line">    visibility: hidden;</span><br><span class="line">    clear: both;</span><br></pre></td></tr></table></figure></p>
+<p>改进版本,创建匿名表格单元，触发bfc<br><!--lang:html--><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.clearfix:after&#123;</span><br><span class="line">content: " ";</span><br><span class="line">display: table;</span><br><span class="line">clear: both;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>继续改进，下列方法可以防止浏览器顶部的空白崩溃<br><!--lang:html--><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.clearfix: before&#123;</span><br><span class="line">content: " ";</span><br><span class="line">display: table;</span><br><span class="line">&#125;</span><br><span class="line">.clearfix: after&#123;</span><br><span class="line">clear: both;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -369,7 +367,7 @@ ps. 智华真的是个让人很难理解的地方，二楼的大屏幕里放的�
       
         <div class="post-tags">
           
-            <a href="/tags/Life/" rel="tag">#Life</a>
+            <a href="/tags/CSSS/" rel="tag">#CSSS</a>
           
         </div>
       
@@ -378,13 +376,13 @@ ps. 智华真的是个让人很难理解的地方，二楼的大屏幕里放的�
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/09/14/响应式网站开发经验总结/" rel="next" title="响应式网站开发经验总结">
+                <i class="fa fa-chevron-left"></i> 响应式网站开发经验总结
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/06/23/HTTP权威指南——HTTP-Web基础（1）/" rel="prev" title="HTTP权威指南——HTTP: Web基础（1）">
-                HTTP权威指南——HTTP: Web基础（1） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -410,8 +408,8 @@ ps. 智华真的是个让人很难理解的地方，二楼的大屏幕里放的�
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/06/21/试一下，就试一下/"
-           data-title="试一下，就试一下" data-url="http://yoursite.com/2016/06/21/试一下，就试一下/">
+      <div class="ds-thread" data-thread-key="2016/09/14/清除浮动小小记/"
+           data-title="清除浮动小小记" data-url="http://yoursite.com/2016/09/14/清除浮动小小记/">
       </div>
     
   </div>
