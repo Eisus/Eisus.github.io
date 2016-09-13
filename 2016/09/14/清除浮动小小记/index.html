@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="CSSS," />
+  <meta name="keywords" content="CSS," />
 
 
 
@@ -96,7 +96,7 @@
 方法一： 在container最下面添加一个空的标签：1&amp;lt;div style=&quot;clear: both&quot;&amp;gt;&amp;lt;/div&amp;gt;
 缺点： 添加了一个空标签，违背了web结构和表现分离的精髓，这种标签很多，后期维护非常不容易。现在不再使用
 方法二：给container添加一个 overflow: auto/hidden；会让浮">
-<meta property="og:updated_time" content="2016-09-13T16:26:11.836Z">
+<meta property="og:updated_time" content="2016-09-13T16:54:55.618Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="清除浮动小小记">
 <meta name="twitter:description" content="原因： 会有高度塌陷的问题，需要通过清除浮动解决高度塌陷。
@@ -343,9 +343,9 @@
 <p><em>缺点</em>： 添加了一个空标签，违背了web结构和表现分离的精髓，这种标签很多，后期维护非常不容易。现在不再使用</p>
 <p><strong>方法二</strong>：给container添加一个 overflow: auto/hidden；会让浮动元素回到容器层</p>
 <p><strong>方法三</strong>： 给父容器增加浮动属性，eg. float: left;<br><em>缺点</em>： 影响了整个页面的布局，如果父元素还有父元素，不能让整个页面建立在浮动基础上</p>
-<p><strong>方法四：</strong><br>现在最常用，给container增加一个clearfix，使用after伪元素。<br><!--lang:html--><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.clearfix:after&#123;</span><br><span class="line">    content: ".";</span><br><span class="line">    display: block;</span><br><span class="line">    height: 0;</span><br><span class="line">    visibility: hidden;</span><br><span class="line">    clear: both;</span><br></pre></td></tr></table></figure></p>
-<p>改进版本,创建匿名表格单元，触发bfc<br><!--lang:html--><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.clearfix:after&#123;</span><br><span class="line">content: " ";</span><br><span class="line">display: table;</span><br><span class="line">clear: both;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>继续改进，下列方法可以防止浏览器顶部的空白崩溃<br><!--lang:html--><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.clearfix: before&#123;</span><br><span class="line">content: " ";</span><br><span class="line">display: table;</span><br><span class="line">&#125;</span><br><span class="line">.clearfix: after&#123;</span><br><span class="line">clear: both;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>方法四：</strong><br>现在最常用，给container增加一个clearfix，使用after伪元素。<br><!--lang:css--><br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">:after</span>&#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">"."</span>;</span><br><span class="line">    <span class="attribute">display</span>: block;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">visibility</span>: hidden;</span><br><span class="line">    <span class="attribute">clear</span>: both;</span><br></pre></td></tr></table></figure></p>
+<p>改进版本,创建匿名表格单元，触发bfc<br><!--lang:css--><br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">:after</span>&#123;</span><br><span class="line"><span class="attribute">content</span>: <span class="string">" "</span>;</span><br><span class="line"><span class="attribute">display</span>: table;</span><br><span class="line"><span class="attribute">clear</span>: both;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>继续改进，下列方法可以防止浏览器顶部的空白崩溃<br><!--lang:css--><br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.clearfix</span>: <span class="selector-tag">before</span>&#123;</span><br><span class="line"><span class="attribute">content</span>: <span class="string">" "</span>;</span><br><span class="line"><span class="attribute">display</span>: table;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.clearfix</span>: <span class="selector-tag">after</span>&#123;</span><br><span class="line"><span class="attribute">clear</span>: both;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -367,7 +367,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/CSSS/" rel="tag">#CSSS</a>
+            <a href="/tags/CSS/" rel="tag">#CSS</a>
           
         </div>
       
@@ -383,6 +383,10 @@
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/09/14/滑动广告窗口小小记/" rel="prev" title="滑动广告窗口小小记">
+                滑动广告窗口小小记 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -454,7 +458,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">15</span>
+              <span class="site-state-item-count">16</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
