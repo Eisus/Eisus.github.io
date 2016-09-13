@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="OpenCV," />
+  <meta name="keywords" content="JavaScript," />
 
 
 
@@ -84,25 +84,49 @@
 
 
 
-<meta name="description" content="新电脑重新配置visual studio 2015 + opencv 3.0，虽然参考了大量教程，但依旧遇到了各种奇奇怪怪的问题，记录一下，以供参考。配置教程网上很多，不再赘述，主要参考教程有：
-OpenCV 学习笔记1 — 开发环境配置（win10+VS2015+OpenCV2.4.12）Setting up OpenCV 3.1 in Visual Studio 2015 
-以下是遇到的主要问">
+<meta name="description" content="##响应式网站设计实践原则：##
+
+（progressive enhancement）渐进增强 简单基本–&amp;gt;根据不同浏览器增加不同效果。（graceful degradation）优雅降级–&amp;gt;先设计一个更好的。推荐使用优雅降级。
+
+从小屏幕开始 vs. 从大屏幕开始： 习惯决定，没有对错。可从受众比较多的开始。
+
+支持的浏览器：
+
+决定设备大小不同，显示内容是否相同。
+
+断点选择。 不">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Win10+Visual Studio 2015+OpenCV3.1开发环境配置问题">
-<meta property="og:url" content="http://yoursite.com/2016/07/26/Win10-Visual-Studio-2015-OpenCV3-1开发环境配置问题/index.html">
+<meta property="og:title" content="响应式网站设计原则">
+<meta property="og:url" content="http://yoursite.com/2016/09/13/响应式网站设计原则/index.html">
 <meta property="og:site_name" content="Susie's Blog">
-<meta property="og:description" content="新电脑重新配置visual studio 2015 + opencv 3.0，虽然参考了大量教程，但依旧遇到了各种奇奇怪怪的问题，记录一下，以供参考。配置教程网上很多，不再赘述，主要参考教程有：
-OpenCV 学习笔记1 — 开发环境配置（win10+VS2015+OpenCV2.4.12）Setting up OpenCV 3.1 in Visual Studio 2015 
-以下是遇到的主要问">
-<meta property="og:image" content="http://static.zybuluo.com/Eisus/85gvot6ftaga2w9oz9i6w3od/691431148121019085.jpg">
-<meta property="og:image" content="http://static.zybuluo.com/Eisus/lv8mmyuyt3vm0qwxy5ovcmrn/151122158442764892.png">
-<meta property="og:updated_time" content="2016-07-26T03:44:57.156Z">
+<meta property="og:description" content="##响应式网站设计实践原则：##
+
+（progressive enhancement）渐进增强 简单基本–&amp;gt;根据不同浏览器增加不同效果。（graceful degradation）优雅降级–&amp;gt;先设计一个更好的。推荐使用优雅降级。
+
+从小屏幕开始 vs. 从大屏幕开始： 习惯决定，没有对错。可从受众比较多的开始。
+
+支持的浏览器：
+
+决定设备大小不同，显示内容是否相同。
+
+断点选择。 不">
+<meta property="og:image" content="http://static.zybuluo.com/Eisus/qmk477arep15mese1tmdeahs/image_1asi48222ti4qhel2cp2c1tuom.png">
+<meta property="og:image" content="http://static.zybuluo.com/Eisus/d37e21d0rsrul60udr7vlh9q/image_1asi47jft18jt12cc1la91t355o9.png">
+<meta property="og:updated_time" content="2016-09-13T16:01:02.570Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Win10+Visual Studio 2015+OpenCV3.1开发环境配置问题">
-<meta name="twitter:description" content="新电脑重新配置visual studio 2015 + opencv 3.0，虽然参考了大量教程，但依旧遇到了各种奇奇怪怪的问题，记录一下，以供参考。配置教程网上很多，不再赘述，主要参考教程有：
-OpenCV 学习笔记1 — 开发环境配置（win10+VS2015+OpenCV2.4.12）Setting up OpenCV 3.1 in Visual Studio 2015 
-以下是遇到的主要问">
-<meta name="twitter:image" content="http://static.zybuluo.com/Eisus/85gvot6ftaga2w9oz9i6w3od/691431148121019085.jpg">
+<meta name="twitter:title" content="响应式网站设计原则">
+<meta name="twitter:description" content="##响应式网站设计实践原则：##
+
+（progressive enhancement）渐进增强 简单基本–&amp;gt;根据不同浏览器增加不同效果。（graceful degradation）优雅降级–&amp;gt;先设计一个更好的。推荐使用优雅降级。
+
+从小屏幕开始 vs. 从大屏幕开始： 习惯决定，没有对错。可从受众比较多的开始。
+
+支持的浏览器：
+
+决定设备大小不同，显示内容是否相同。
+
+断点选择。 不">
+<meta name="twitter:image" content="http://static.zybuluo.com/Eisus/qmk477arep15mese1tmdeahs/image_1asi48222ti4qhel2cp2c1tuom.png">
 
 
 
@@ -123,9 +147,9 @@ OpenCV 学习笔记1 — 开发环境配置（win10+VS2015+OpenCV2.4.12）Settin
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/07/26/Win10-Visual-Studio-2015-OpenCV3-1开发环境配置问题/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/09/13/响应式网站设计原则/"/>
 
-  <title> Win10+Visual Studio 2015+OpenCV3.1开发环境配置问题 | Susie's Blog </title>
+  <title> 响应式网站设计原则 | Susie's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -265,7 +289,7 @@ OpenCV 学习笔记1 — 开发环境配置（win10+VS2015+OpenCV2.4.12）Settin
             
             
               
-                Win10+Visual Studio 2015+OpenCV3.1开发环境配置问题
+                响应式网站设计原则
               
             
           </h1>
@@ -277,8 +301,8 @@ OpenCV 学习笔记1 — 开发环境配置（win10+VS2015+OpenCV2.4.12）Settin
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-26T11:41:50+08:00" content="2016-07-26">
-              2016-07-26
+            <time itemprop="dateCreated" datetime="2016-09-13T23:53:38+08:00" content="2016-09-13">
+              2016-09-13
             </time>
           </span>
 
@@ -307,8 +331,8 @@ OpenCV 学习笔记1 — 开发环境配置（win10+VS2015+OpenCV2.4.12）Settin
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/07/26/Win10-Visual-Studio-2015-OpenCV3-1开发环境配置问题/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/26/Win10-Visual-Studio-2015-OpenCV3-1开发环境配置问题/" itemprop="commentsCount"></span>
+                <a href="/2016/09/13/响应式网站设计原则/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/13/响应式网站设计原则/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -338,13 +362,19 @@ OpenCV 学习笔记1 — 开发环境配置（win10+VS2015+OpenCV2.4.12）Settin
       
 
       
-        <p>新电脑重新配置visual studio 2015 + opencv 3.0，虽然参考了大量教程，但依旧遇到了各种奇奇怪怪的问题，记录一下，以供参考。<br>配置教程网上很多，不再赘述，主要参考教程有：</p>
-<p><a href="http://m.blog.csdn.net/article/details?id=51141555" target="_blank" rel="external">OpenCV 学习笔记1 — 开发环境配置（win10+VS2015+OpenCV2.4.12）</a><br><a href="https://www.youtube.com/watch?v=l4372qtZ4dc" target="_blank" rel="external">Setting up OpenCV 3.1 in Visual Studio 2015 </a></p>
-<p>以下是遇到的主要问题和解决方法：</p>
-<p><img src="http://static.zybuluo.com/Eisus/85gvot6ftaga2w9oz9i6w3od/691431148121019085.jpg" alt="691431148121019085.jpg-19.8kB"><br>    遇到这个问题首先检查的是<strong>环境变量是否配的正确</strong>，配错了会导致dll文件无法找到。一般配对了就不会有这样的问题产生。环境变量配对了但依旧有dll文件无法找到的问题，可以<strong>考虑自己下载相应文件，然后将其复制到相关目录下</strong>：<br>32位系统：C:\Windows\System32<br>64位系统：C:\Windows\SysWOW64</p>
-<pre><code>如果问题还未解决，微软官方给的解决方案是**安装microsoft redistributable**，我有尝试，但我的问题并未得到解决，但不失为一种办法可以尝试一下。
-</code></pre><p><img src="http://static.zybuluo.com/Eisus/lv8mmyuyt3vm0qwxy5ovcmrn/151122158442764892.png" alt="151122158442764892.png-76.8kB"><br>    遇到类似问题，可能是和<strong>opencv版本有关系的</strong>。之前配opencv2.4.13一直出现这个问题，换了opencv3.1之后这个问题就没有了。如果换了版本问题没有得到解决，可以尝试以下方案：<br>方案一：<br><em>Step 1</em>. Open Windows Explorer and navigate to C:\Windows\System32. <em>Step 2</em>: Locate and delete the following files:<br>“xinput1_1.dll”, “xinput1_2.dll”, “xinput1<em>3.dll” and all other files started with xinput1</em><em>.dll.
-</em>Step 3*: Once the files are deleted, click the link below to download and run the DirectX setup<br>方案二：<br>用dependency walker</p>
+        <p>##响应式网站设计实践原则：##</p>
+<ol>
+<li><p>（progressive enhancement）渐进增强 简单基本–&gt;根据不同浏览器增加不同效果。<br>（graceful degradation）优雅降级–&gt;先设计一个更好的。<br>推荐使用优雅降级。</p>
+</li>
+<li><p>从小屏幕开始 vs. 从大屏幕开始： 习惯决定，没有对错。可从受众比较多的开始。</p>
+</li>
+<li><p>支持的浏览器：<br><img src="http://static.zybuluo.com/Eisus/qmk477arep15mese1tmdeahs/image_1asi48222ti4qhel2cp2c1tuom.png" alt="image_1asi48222ti4qhel2cp2c1tuom.png-94.4kB"></p>
+</li>
+<li><p>决定设备大小不同，显示内容是否相同。</p>
+</li>
+<li>断点选择。 不推荐针对不同设备选择断点。可根据屏幕大小设置，如：<br><img src="http://static.zybuluo.com/Eisus/d37e21d0rsrul60udr7vlh9q/image_1asi47jft18jt12cc1la91t355o9.png" alt="image_1asi47jft18jt12cc1la91t355o9.png-63.1kB"></li>
+</ol>
+<h2 id="渐进增强-vs-优雅降级"><a href="#渐进增强-vs-优雅降级" class="headerlink" title="渐进增强 vs. 优雅降级"></a>渐进增强 vs. 优雅降级</h2><p><strong>渐进增强</strong>：针对低版本浏览器进行构建页面，保证最基本的功能，然后再针对高级浏览器进行效果、交互等改进和追加功能达到更好的用户体验。<br><strong>优雅降级</strong>：一开始就构建完整的功能，然后再针对低版本浏览器进行兼容。<br><strong>区别</strong>：优雅降级是从复杂的现状开始，并试图减少用户体验的供给，而渐进增强则是从一个非常基础的，能够起作用的版本开始，并不断扩充，以适应未来环境的需要。降级（功能衰减）意味着往回看；而渐进增强则意味着朝前看，同时保证其根基处于安全地带。</p>
 
       
     </div>
@@ -366,7 +396,7 @@ OpenCV 学习笔记1 — 开发环境配置（win10+VS2015+OpenCV2.4.12）Settin
       
         <div class="post-tags">
           
-            <a href="/tags/OpenCV/" rel="tag">#OpenCV</a>
+            <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
           
         </div>
       
@@ -375,17 +405,13 @@ OpenCV 学习笔记1 — 开发环境配置（win10+VS2015+OpenCV2.4.12）Settin
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/07/14/VR设备输入方式总结与对比/" rel="next" title="VR设备输入方式总结与对比">
-                <i class="fa fa-chevron-left"></i> VR设备输入方式总结与对比
+              <a href="/2016/09/13/媒体查询/" rel="next" title="媒体查询">
+                <i class="fa fa-chevron-left"></i> 媒体查询
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/07/29/近期进度总结/" rel="prev" title="近期进度总结">
-                近期进度总结 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -411,8 +437,8 @@ OpenCV 学习笔记1 — 开发环境配置（win10+VS2015+OpenCV2.4.12）Settin
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/07/26/Win10-Visual-Studio-2015-OpenCV3-1开发环境配置问题/"
-           data-title="Win10+Visual Studio 2015+OpenCV3.1开发环境配置问题" data-url="http://yoursite.com/2016/07/26/Win10-Visual-Studio-2015-OpenCV3-1开发环境配置问题/">
+      <div class="ds-thread" data-thread-key="2016/09/13/响应式网站设计原则/"
+           data-title="响应式网站设计原则" data-url="http://yoursite.com/2016/09/13/响应式网站设计原则/">
       </div>
     
   </div>
@@ -514,7 +540,7 @@ OpenCV 学习笔记1 — 开发环境配置（win10+VS2015+OpenCV2.4.12）Settin
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#渐进增强-vs-优雅降级"><span class="nav-number">1.</span> <span class="nav-text">渐进增强 vs. 优雅降级</span></a></li></ol></div>
             
           </div>
         </section>

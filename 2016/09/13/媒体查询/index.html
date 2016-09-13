@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="OpenCV," />
+  <meta name="keywords" content="JavaScript," />
 
 
 
@@ -84,25 +84,22 @@
 
 
 
-<meta name="description" content="新电脑重新配置visual studio 2015 + opencv 3.0，虽然参考了大量教程，但依旧遇到了各种奇奇怪怪的问题，记录一下，以供参考。配置教程网上很多，不再赘述，主要参考教程有：
-OpenCV 学习笔记1 — 开发环境配置（win10+VS2015+OpenCV2.4.12）Setting up OpenCV 3.1 in Visual Studio 2015 
-以下是遇到的主要问">
+<meta name="description" content="响应式开发中的一个重点就是媒体查询。
+基本概念
+1234567891011&amp;lt;!-- link元素中的CSS媒体查询 --&amp;gt;&amp;lt;link rel=&quot;stylesheet&quot; media=&quot;(max-width: 800px)&quot; href=&quot;example.css&quot; /&amp;gt;&amp;lt;!-- 样式表中的CSS媒体查询 --&amp;gt;&amp;lt;style&amp;gt;@media (max-widt">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Win10+Visual Studio 2015+OpenCV3.1开发环境配置问题">
-<meta property="og:url" content="http://yoursite.com/2016/07/26/Win10-Visual-Studio-2015-OpenCV3-1开发环境配置问题/index.html">
+<meta property="og:title" content="媒体查询">
+<meta property="og:url" content="http://yoursite.com/2016/09/13/媒体查询/index.html">
 <meta property="og:site_name" content="Susie's Blog">
-<meta property="og:description" content="新电脑重新配置visual studio 2015 + opencv 3.0，虽然参考了大量教程，但依旧遇到了各种奇奇怪怪的问题，记录一下，以供参考。配置教程网上很多，不再赘述，主要参考教程有：
-OpenCV 学习笔记1 — 开发环境配置（win10+VS2015+OpenCV2.4.12）Setting up OpenCV 3.1 in Visual Studio 2015 
-以下是遇到的主要问">
-<meta property="og:image" content="http://static.zybuluo.com/Eisus/85gvot6ftaga2w9oz9i6w3od/691431148121019085.jpg">
-<meta property="og:image" content="http://static.zybuluo.com/Eisus/lv8mmyuyt3vm0qwxy5ovcmrn/151122158442764892.png">
-<meta property="og:updated_time" content="2016-07-26T03:44:57.156Z">
+<meta property="og:description" content="响应式开发中的一个重点就是媒体查询。
+基本概念
+1234567891011&amp;lt;!-- link元素中的CSS媒体查询 --&amp;gt;&amp;lt;link rel=&quot;stylesheet&quot; media=&quot;(max-width: 800px)&quot; href=&quot;example.css&quot; /&amp;gt;&amp;lt;!-- 样式表中的CSS媒体查询 --&amp;gt;&amp;lt;style&amp;gt;@media (max-widt">
+<meta property="og:updated_time" content="2016-09-13T15:52:56.336Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Win10+Visual Studio 2015+OpenCV3.1开发环境配置问题">
-<meta name="twitter:description" content="新电脑重新配置visual studio 2015 + opencv 3.0，虽然参考了大量教程，但依旧遇到了各种奇奇怪怪的问题，记录一下，以供参考。配置教程网上很多，不再赘述，主要参考教程有：
-OpenCV 学习笔记1 — 开发环境配置（win10+VS2015+OpenCV2.4.12）Setting up OpenCV 3.1 in Visual Studio 2015 
-以下是遇到的主要问">
-<meta name="twitter:image" content="http://static.zybuluo.com/Eisus/85gvot6ftaga2w9oz9i6w3od/691431148121019085.jpg">
+<meta name="twitter:title" content="媒体查询">
+<meta name="twitter:description" content="响应式开发中的一个重点就是媒体查询。
+基本概念
+1234567891011&amp;lt;!-- link元素中的CSS媒体查询 --&amp;gt;&amp;lt;link rel=&quot;stylesheet&quot; media=&quot;(max-width: 800px)&quot; href=&quot;example.css&quot; /&amp;gt;&amp;lt;!-- 样式表中的CSS媒体查询 --&amp;gt;&amp;lt;style&amp;gt;@media (max-widt">
 
 
 
@@ -123,9 +120,9 @@ OpenCV 学习笔记1 — 开发环境配置（win10+VS2015+OpenCV2.4.12）Settin
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/07/26/Win10-Visual-Studio-2015-OpenCV3-1开发环境配置问题/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/09/13/媒体查询/"/>
 
-  <title> Win10+Visual Studio 2015+OpenCV3.1开发环境配置问题 | Susie's Blog </title>
+  <title> 媒体查询 | Susie's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -265,7 +262,7 @@ OpenCV 学习笔记1 — 开发环境配置（win10+VS2015+OpenCV2.4.12）Settin
             
             
               
-                Win10+Visual Studio 2015+OpenCV3.1开发环境配置问题
+                媒体查询
               
             
           </h1>
@@ -277,8 +274,8 @@ OpenCV 学习笔记1 — 开发环境配置（win10+VS2015+OpenCV2.4.12）Settin
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-26T11:41:50+08:00" content="2016-07-26">
-              2016-07-26
+            <time itemprop="dateCreated" datetime="2016-09-13T23:41:07+08:00" content="2016-09-13">
+              2016-09-13
             </time>
           </span>
 
@@ -307,8 +304,8 @@ OpenCV 学习笔记1 — 开发环境配置（win10+VS2015+OpenCV2.4.12）Settin
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/07/26/Win10-Visual-Studio-2015-OpenCV3-1开发环境配置问题/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/26/Win10-Visual-Studio-2015-OpenCV3-1开发环境配置问题/" itemprop="commentsCount"></span>
+                <a href="/2016/09/13/媒体查询/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/13/媒体查询/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -338,13 +335,18 @@ OpenCV 学习笔记1 — 开发环境配置（win10+VS2015+OpenCV2.4.12）Settin
       
 
       
-        <p>新电脑重新配置visual studio 2015 + opencv 3.0，虽然参考了大量教程，但依旧遇到了各种奇奇怪怪的问题，记录一下，以供参考。<br>配置教程网上很多，不再赘述，主要参考教程有：</p>
-<p><a href="http://m.blog.csdn.net/article/details?id=51141555" target="_blank" rel="external">OpenCV 学习笔记1 — 开发环境配置（win10+VS2015+OpenCV2.4.12）</a><br><a href="https://www.youtube.com/watch?v=l4372qtZ4dc" target="_blank" rel="external">Setting up OpenCV 3.1 in Visual Studio 2015 </a></p>
-<p>以下是遇到的主要问题和解决方法：</p>
-<p><img src="http://static.zybuluo.com/Eisus/85gvot6ftaga2w9oz9i6w3od/691431148121019085.jpg" alt="691431148121019085.jpg-19.8kB"><br>    遇到这个问题首先检查的是<strong>环境变量是否配的正确</strong>，配错了会导致dll文件无法找到。一般配对了就不会有这样的问题产生。环境变量配对了但依旧有dll文件无法找到的问题，可以<strong>考虑自己下载相应文件，然后将其复制到相关目录下</strong>：<br>32位系统：C:\Windows\System32<br>64位系统：C:\Windows\SysWOW64</p>
-<pre><code>如果问题还未解决，微软官方给的解决方案是**安装microsoft redistributable**，我有尝试，但我的问题并未得到解决，但不失为一种办法可以尝试一下。
-</code></pre><p><img src="http://static.zybuluo.com/Eisus/lv8mmyuyt3vm0qwxy5ovcmrn/151122158442764892.png" alt="151122158442764892.png-76.8kB"><br>    遇到类似问题，可能是和<strong>opencv版本有关系的</strong>。之前配opencv2.4.13一直出现这个问题，换了opencv3.1之后这个问题就没有了。如果换了版本问题没有得到解决，可以尝试以下方案：<br>方案一：<br><em>Step 1</em>. Open Windows Explorer and navigate to C:\Windows\System32. <em>Step 2</em>: Locate and delete the following files:<br>“xinput1_1.dll”, “xinput1_2.dll”, “xinput1<em>3.dll” and all other files started with xinput1</em><em>.dll.
-</em>Step 3*: Once the files are deleted, click the link below to download and run the DirectX setup<br>方案二：<br>用dependency walker</p>
+        <p>响应式开发中的一个重点就是媒体查询。</p>
+<h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><!--lang:html-->
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- link元素中的CSS媒体查询 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">media</span>=<span class="string">"(max-width: 800px)"</span> <span class="attr">href</span>=<span class="string">"example.css"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 样式表中的CSS媒体查询 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span><br><span class="line">@media (max-width: 600px) &#123;//如果查询为真，则应用一下样式</span><br><span class="line">  .facet_sidebar &#123;</span><br><span class="line">    display: none;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>当媒体查询为真时，相关的样式表或样式规则就会按照正常的级联规则被应用。即使媒体查询返回假， <link> 标签上带有媒体查询的样式表 仍将被下载 （只不过不会被应用）。</p>
+<p>only 操作符表示仅在媒体查询匹配成功的情况下应用指定样式。可以通过它让选中的样式在老式浏览器中不被应用。若使用了 not 或 only 操作符，必须明确指定一个媒体类型。 你也可以将多个媒体查询以逗号分隔放在一起；只要其中任何一个为真，整个媒体语句就返回真。相当于 or 操作符。<br>only 关键字防止老旧的浏览器不支持带媒体属性的查询而应用到给定的样式：<br><!--lang:html--><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">media</span>=<span class="string">"only screen and (color)"</span> <span class="attr">href</span>=<span class="string">"example.css"</span> /&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>老的浏览器解析到第一个空格处为 media=“only”–&gt;这个样式老浏览器会忽略掉，因为没有only这个设备<br>不写only会解析成 media=“screen“，这个永远为真，都会应用这个样式。</p>
+<h2 id="CSS3媒体属性"><a href="#CSS3媒体属性" class="headerlink" title="CSS3媒体属性"></a>CSS3媒体属性</h2><p>width<br>height 视口<br>device-width<br>device-height 设备<br>orientation<br>aspect-ratio 视口宽高比<br>device-aspect-ratio 设备屏幕宽度<br>color<br>resolution<br>以上属性都可添加min或max</p>
+<h3 id="视口-viewport-宽度-vs-设备宽度"><a href="#视口-viewport-宽度-vs-设备宽度" class="headerlink" title="视口(viewport)宽度 vs 设备宽度"></a>视口(viewport)宽度 vs 设备宽度</h3><p>布局视口    可视视口    理想视口<br><strong>布局视口：</strong> 虚拟的宽度把网页布局出来。缩放之类的操作是不会改变布局视口.<br><strong>可视视口：</strong>最终页面呈现的，用户自己通过缩放得到的。用户在手机上查看网页的过程就是缩放滑动可视视口显示布局视口的不同部分。.<br><strong>理想视口：</strong>布局视口在一个设备上的最佳尺寸。理性视口下的页面便于浏览器浏览阅读。是为构建手机浏览器优化的页面而添加的。</p>
+<p>理想视口这样去定义：<br><!--lang:html--><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width"</span>/&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>如果不写，布局视口的宽度是厂商默认值。使用这句话后，布局视口成为理想视口。页面布局宽度就是设备宽度。不需要缩放就可以把页面展示。很多网站会通过下列方式禁用用户的缩放。</p>
+<p>响应式网站至少需要有这样一个定义：<br><!--lang:html--><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width"</span>/&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>同时，还可以定义一些其他的属性：最大/最小缩放比例，是否禁用用户缩放比例等。</p>
 
       
     </div>
@@ -366,7 +368,7 @@ OpenCV 学习笔记1 — 开发环境配置（win10+VS2015+OpenCV2.4.12）Settin
       
         <div class="post-tags">
           
-            <a href="/tags/OpenCV/" rel="tag">#OpenCV</a>
+            <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
           
         </div>
       
@@ -375,16 +377,16 @@ OpenCV 学习笔记1 — 开发环境配置（win10+VS2015+OpenCV2.4.12）Settin
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/07/14/VR设备输入方式总结与对比/" rel="next" title="VR设备输入方式总结与对比">
-                <i class="fa fa-chevron-left"></i> VR设备输入方式总结与对比
+              <a href="/2016/09/13/响应式网站开发基础知识/" rel="next" title="响应式网站开发基础知识">
+                <i class="fa fa-chevron-left"></i> 响应式网站开发基础知识
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/07/29/近期进度总结/" rel="prev" title="近期进度总结">
-                近期进度总结 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/09/13/响应式网站设计原则/" rel="prev" title="响应式网站设计原则">
+                响应式网站设计原则 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -411,8 +413,8 @@ OpenCV 学习笔记1 — 开发环境配置（win10+VS2015+OpenCV2.4.12）Settin
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/07/26/Win10-Visual-Studio-2015-OpenCV3-1开发环境配置问题/"
-           data-title="Win10+Visual Studio 2015+OpenCV3.1开发环境配置问题" data-url="http://yoursite.com/2016/07/26/Win10-Visual-Studio-2015-OpenCV3-1开发环境配置问题/">
+      <div class="ds-thread" data-thread-key="2016/09/13/媒体查询/"
+           data-title="媒体查询" data-url="http://yoursite.com/2016/09/13/媒体查询/">
       </div>
     
   </div>
@@ -514,7 +516,7 @@ OpenCV 学习笔记1 — 开发环境配置（win10+VS2015+OpenCV2.4.12）Settin
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本概念"><span class="nav-number">1.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS3媒体属性"><span class="nav-number">2.</span> <span class="nav-text">CSS3媒体属性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#视口-viewport-宽度-vs-设备宽度"><span class="nav-number">2.1.</span> <span class="nav-text">视口(viewport)宽度 vs 设备宽度</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
