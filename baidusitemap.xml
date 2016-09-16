@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://yoursite.com/2016/09/01/%E5%85%B3%E4%BA%8E%E9%97%AD%E5%8C%85-%E5%BE%AA%E7%8E%AF-%E5%9D%97%E7%BA%A7%E4%BD%9C%E7%94%A8%E5%9F%9F%E7%9A%84%E7%A2%8E%E7%A2%8E%E5%BF%B5/</loc>
+    <lastmod>2016-09-16T13:20:19.948Z</lastmod>
+    <data>
+        <display>
+        <title>关于闭包 & 循环 & 块级作用域的碎碎念</title>
+        <pubTime>2016-09-01T01:00:39.000Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+         
+           
+             
+              <breadCrumb title="Tech" url="http://yoursite.com/categories/Tech/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2016/09/16/%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%A3%80%E6%B5%8B/</loc>
     <lastmod>2016-09-16T09:35:25.750Z</lastmod>
     <data>
@@ -92,26 +112,6 @@
         <pubTime>2016-09-07T16:24:34.000Z</pubTime>
         
         <tag>CSS</tag>
-         
-         
-           
-             
-              <breadCrumb title="Tech" url="http://yoursite.com/categories/Tech/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2016/09/01/%E5%85%B3%E4%BA%8E%E9%97%AD%E5%8C%85-%E5%BE%AA%E7%8E%AF-%E5%9D%97%E7%BA%A7%E4%BD%9C%E7%94%A8%E5%9F%9F%E7%9A%84%E7%A2%8E%E7%A2%8E%E5%BF%B5/</loc>
-    <lastmod>2016-09-15T14:23:20.748Z</lastmod>
-    <data>
-        <display>
-        <title>关于闭包 & 循环 & 块级作用域的碎碎念</title>
-        <pubTime>2016-09-01T01:00:39.000Z</pubTime>
-        
-        <tag>JavaScript</tag>
          
          
            
