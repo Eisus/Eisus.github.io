@@ -1,0 +1,665 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="JavaScript," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="Web客户端检测的手段有很多，各有利弊，但不到万不得已，就不要使用客户端检测，只要能找到更通用的方法，就应该优先采用更通用的方法。一言以蔽之，先设计最通用的方案，然后再使用特定于浏览器的技术增强方案。
+能力检测目标不是识别特定的浏览器，而是识别浏览器的能力，如之前跨浏览器事件处理程序所用到的技术。要注意先检测达成目的最常用的特性，且必须测试实际要用到的特性，一个特性存在，不意味着另一个特性也存在。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="客户端检测">
+<meta property="og:url" content="http://yoursite.com/2016/09/16/客户端检测/index.html">
+<meta property="og:site_name" content="Susie's Blog">
+<meta property="og:description" content="Web客户端检测的手段有很多，各有利弊，但不到万不得已，就不要使用客户端检测，只要能找到更通用的方法，就应该优先采用更通用的方法。一言以蔽之，先设计最通用的方案，然后再使用特定于浏览器的技术增强方案。
+能力检测目标不是识别特定的浏览器，而是识别浏览器的能力，如之前跨浏览器事件处理程序所用到的技术。要注意先检测达成目的最常用的特性，且必须测试实际要用到的特性，一个特性存在，不意味着另一个特性也存在。">
+<meta property="og:updated_time" content="2016-09-16T09:30:18.045Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="客户端检测">
+<meta name="twitter:description" content="Web客户端检测的手段有很多，各有利弊，但不到万不得已，就不要使用客户端检测，只要能找到更通用的方法，就应该优先采用更通用的方法。一言以蔽之，先设计最通用的方案，然后再使用特定于浏览器的技术增强方案。
+能力检测目标不是识别特定的浏览器，而是识别浏览器的能力，如之前跨浏览器事件处理程序所用到的技术。要注意先检测达成目的最常用的特性，且必须测试实际要用到的特性，一个特性存在，不意味着另一个特性也存在。">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/09/16/客户端检测/"/>
+
+  <title> 客户端检测 | Susie's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Susie's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">The life is tough, but I'm tougher</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                客户端检测
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-16T17:12:21+08:00" content="2016-09-16">
+              2016-09-16
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Tech/" itemprop="url" rel="index">
+                    <span itemprop="name">Tech</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/16/客户端检测/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/16/客户端检测/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+	     <span>&nbsp; | &nbsp;
+             <span id="busuanzi_value_page_pv" ></span> view.
+             </span>    
+          
+
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Web客户端检测的手段有很多，各有利弊，但不到万不得已，就不要使用客户端检测，只要能找到更通用的方法，就应该优先采用更通用的方法。一言以蔽之，先设计最通用的方案，然后再使用特定于浏览器的技术增强方案。</p>
+<h2 id="能力检测"><a href="#能力检测" class="headerlink" title="能力检测"></a>能力检测</h2><p>目标不是识别特定的浏览器，而是识别浏览器的能力，如之前跨浏览器事件处理程序所用到的技术。要注意先检测达成目的最常用的特性，且必须测试实际要用到的特性，一个特性存在，不意味着另一个特性也存在。更可靠的能力检测是，在可能的情况下，要尽量用typeof进行能力检测。在浏览器环境下测试任何对象的某个特性是否存在要用到下面这个函数。<br><!--lang:javascript--><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//in browser enviroment, use it to test whether one object</span></span><br><span class="line"><span class="comment">//has some property.</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isHostMethod</span>(<span class="params">object, property</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> t =<span class="keyword">typeof</span> object[property];</span><br><span class="line">    <span class="keyword">return</span> t==<span class="string">'function'</span> ||</span><br><span class="line">        (!!(t=<span class="string">'object'</span> &amp;&amp; object[property])) ||</span><br><span class="line">            t==<span class="string">"unknown"</span>;</span><br><span class="line">&#125;<span class="comment">//the reason using !! here is force to transfer the value to boolean</span></span><br></pre></td></tr></table></figure></p>
+<p>可用下面的代码分别是否支持netspace风格的插件和是否支持DOM1<br><!--lang:javascript--><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> hasNSPlugins= !!(navigator.plugins &amp;&amp; navigator.plugins.length);</span><br></pre></td></tr></table></figure></p>
+<!--lang:javascript-->
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> hasDOM1= !!(<span class="built_in">document</span>.getElementById &amp;&amp; <span class="built_in">document</span>.createElement &amp;&amp;</span><br><span class="line"><span class="built_in">document</span>.getElementsByTagName);</span><br></pre></td></tr></table></figure>
+<p><strong>注意：</strong>  能力检测！=浏览器检测</p>
+<h2 id="怪癖检测"><a href="#怪癖检测" class="headerlink" title="怪癖检测"></a>怪癖检测</h2><p>通过运行一小段代码检测浏览器有什么缺陷</p>
+<h2 id="用户代理检测"><a href="#用户代理检测" class="headerlink" title="用户代理检测"></a>用户代理检测</h2><p>争议最大，用户代理检测通过检测用户代理字符串来确定实际使用的浏览器。在每一次HTTP请求过程中，用户代理字符串是作为响应首部发送的，而且该字符串可以通过JS的navigatior.userAgent属性访问的。</p>
+<h3 id="呈现引擎检测"><a href="#呈现引擎检测" class="headerlink" title="呈现引擎检测"></a>呈现引擎检测</h3><p>确切知道浏览器的名字和版本号不如确切知道它使用的是什么呈现引擎。具有相同的呈现引擎，意味着支持相同的特性。</p>
+<p>检测呈现引擎时，应遵循这样的顺序：</p>
+<p>第一步,检测opera，因为他的用户代理字符串有可能完全模仿其他浏览器。检测它，必须检测window.opera。</p>
+<p>第二步,检测webkit，因为webkit用户代理字符串中包含“gecko”和“KHTML”这两个子字符串，但其用户代理字符串中的“AppleWebkit”是独一无二的。 其中<!--lang:javascript--><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">第三步,检测KHTML, 这里注意，KHTML有两种形式： </span><br><span class="line"> 1. KHTML/版本号 后用空格隔开   </span><br><span class="line"> 2. Konqueror/版本号 后用分号隔开</span><br><span class="line"></span><br><span class="line">第四步,排除了webkit和khtml后就能准确检测出Gecko。Gecko的用户代理字符串都具有   .........；rv:1.8.1.11) Gecko/20071127   这样的形式</span><br><span class="line"></span><br><span class="line">第五步,检测IE，需要检测的是MISE。</span><br><span class="line"></span><br><span class="line">### 识别浏览器 ###</span><br><span class="line"></span><br><span class="line">多数情况下识别了浏览器的呈现引擎足以为采取正确的操作提供依据。可是，只有呈现引擎还不能说明存在所需的JavaScript功能，需要识别浏览器。</span><br><span class="line">对于opera和ie而言，browser对象中的值等于engine对象中得知。对Konqueror而言，browser，konq和browser.ver属性分别等于engine.khtml和engine.ver属性。</span><br><span class="line"></span><br><span class="line">### 识别平台 ###</span><br><span class="line">在某些条件下，还要对平台进行关注，具有各种平台版本的浏览器在不同平台下可能会有不同的问题。三大主流平台是Windows、Mac和Unix。再确定平台时，检测navigator.platform要比检测用户代理字符串更简单。在windows平台下，还可以从用户代理字符串中进一步去的具体的操作系统信息。</span><br><span class="line"></span><br><span class="line">### 用户代理检测适用情况 ###</span><br><span class="line">1. 不能直接准确地使用能力检测或怪癖检测。</span><br><span class="line">2. 同一款浏览器在不同平台下具备不同的能力，有必要确定浏览器位于哪个平台下。</span><br><span class="line">3. 为了跟踪分析等目的需要知道确切的浏览器。</span><br><span class="line"></span><br><span class="line">具体代码如下:</span><br><span class="line">&lt;!--lang:javascript--&gt;</span><br><span class="line">```javascript</span><br><span class="line">// client detection</span><br><span class="line">var client = function() &#123;</span><br><span class="line">    var engine = &#123;</span><br><span class="line">        ie: 0,</span><br><span class="line">        gecko: 0,</span><br><span class="line">        webkit: 0,</span><br><span class="line">        khtml: 0,</span><br><span class="line">        opera: 0,</span><br><span class="line">        ver: null</span><br><span class="line">    &#125;;</span><br><span class="line">    var browser = &#123;</span><br><span class="line">        ie: 0,</span><br><span class="line">        firefox: 0,</span><br><span class="line">        safari: 0,</span><br><span class="line">        konq: 0,</span><br><span class="line">        opera: 0,</span><br><span class="line">        chrome: 0,</span><br><span class="line">        ver:  null</span><br><span class="line">    &#125;;</span><br><span class="line">    var system= &#123;</span><br><span class="line">        win: false,</span><br><span class="line">        mac: false,</span><br><span class="line">        x11: false,</span><br><span class="line"></span><br><span class="line">    //    mobile</span><br><span class="line">        iphone: false,</span><br><span class="line">        ipod: false,</span><br><span class="line">        ipad: false,</span><br><span class="line">        ios: false,</span><br><span class="line">        android: false,</span><br><span class="line">        winMobile: false,</span><br><span class="line"></span><br><span class="line">    //    game system</span><br><span class="line">        wii: false,</span><br><span class="line">        ps: false</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    var ua=navigator.userAgent;</span><br><span class="line">    if (window.opera) &#123;</span><br><span class="line">        engine.var=window.opera.version();</span><br><span class="line">        engine.opera=parseFloat(engine.var);</span><br><span class="line">    &#125; else if (/AppleWebkit\/(\S+)/.test(ua))&#123;</span><br><span class="line">        engine.ver=RegExp[&quot;$1&quot;];</span><br><span class="line">        engine.webkit =parseFloat(engine.ver);</span><br><span class="line">    //    chrome or safari</span><br><span class="line">        if (/Chrome\/(\S+)/.test(ua))&#123;</span><br><span class="line">            browser.ver=RegExp[&quot;$1&quot;];</span><br><span class="line">            browser.chrome=parseFloat(browser.ver);</span><br><span class="line">        &#125; else if (/Version\/(\S+)/.test(ua)) &#123;</span><br><span class="line">            browser.ver=RegExp[&quot;$1&quot;];</span><br><span class="line">            browser.safari=parseFloat(browser.ver);</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            // to confirm the version approximately</span><br><span class="line">            var safariVersion=1;</span><br><span class="line">            if (engine.webkit&lt;100)&#123;</span><br><span class="line">                safariVersion=1;</span><br><span class="line">            &#125; else if (engine.webkit&lt;312) &#123;</span><br><span class="line">                safariVersion=1.2;</span><br><span class="line">            &#125; else if (engine.webkit&lt;412) &#123;</span><br><span class="line">                safariVersion=1.3;</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                safariVersion=2;</span><br><span class="line">            &#125;</span><br><span class="line">            browser.safari=browser.ver=safariVersion;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125; else if (/KHTML\/(\S+)/.test(ua)||/Konqueror\/([^;]+)/.test(ua))&#123;</span><br><span class="line">        engine.ver=RegExp[&quot;$1&quot;];</span><br><span class="line">        engine.khtml=parseFloat(engine.ver);</span><br><span class="line">    &#125; else if (/rv:([^\)]+)\) Gecko\/\d(8)/.test(ua)) &#123;</span><br><span class="line">        engine.ver=RegExp[&quot;$1&quot;];</span><br><span class="line">        engine.gecko=parseFloat(engine.ver);</span><br><span class="line"></span><br><span class="line">    //    to confirm firefox</span><br><span class="line">        if (/Firefox\/(\S+)/.test(ua)) &#123;</span><br><span class="line">            browser.ver=RegExp[&quot;$1&quot;];</span><br><span class="line">            browser.firefox=parseFloat(browser.ver);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; else if (/MSIE([^;]+)/.test(ua)) &#123;</span><br><span class="line">        engine.ver=RegExp[&quot;$1&quot;];</span><br><span class="line">        engine.ie=parseFloat(engine.ver);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    var p = navigator.platform;</span><br><span class="line">    system.win = p.indexOf(&quot;Win&quot;) == 0;</span><br><span class="line">    system.mac = p.indexOf(&quot;Mac&quot;) == 0;</span><br><span class="line">    system.x11 = (p.indexOf(&quot;X11&quot;) == 0) || (p.indexOf(&quot;Linux&quot;) == 0);</span><br><span class="line"></span><br><span class="line">    system.iphone = ua.indexOf(&quot;iPhone&quot;) &gt;-1;</span><br><span class="line">    system.ipod = ua.indexOf(&quot;iPod&quot;) &gt;-1;</span><br><span class="line">    system.ipad= ua.indexOf(&quot;iPad&quot;) &gt;-1;</span><br><span class="line"></span><br><span class="line">    //window mobile</span><br><span class="line">    if (system.win ==&quot;CE&quot;) &#123;</span><br><span class="line">        system.winMobile = system.win;</span><br><span class="line">    &#125; else if (system.win==&quot;Ph&quot;) &#123;</span><br><span class="line">        if(/Windows Phone Os (\d+.\d+)/.test(ua)) &#123;</span><br><span class="line">            system.win=&quot;Phone&quot;;</span><br><span class="line">            system.winMobile=parseFloat(RegExp.$1);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    // confirm ios version</span><br><span class="line">    if (system.mac &amp;&amp; ua.indexOf(&quot;Mobile&quot;)&gt;-1) &#123;</span><br><span class="line">        if (/CPU(?:iPhone)?OS (\d+_\d)/.test(ua)) &#123;</span><br><span class="line">            system.ios=parseFloat(RegExp[&quot;&amp;1&quot;].replace(&quot;_&quot;,&quot;.&quot;));</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            system.ios=2;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    // confirm android version</span><br><span class="line">    if (/Android(\d+\.\d+)/.test(ua)) &#123;</span><br><span class="line">        system.android=parseFloat(RegExp.$1);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // game system</span><br><span class="line">    system.wii = ua.indexOf(&quot;Wii&quot;)&gt;-1;</span><br><span class="line">    system.ps = /playstation/i.test(ua);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    return &#123;</span><br><span class="line">        engine: engine,</span><br><span class="line">        browser: browser,</span><br><span class="line">        system: system</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/09/14/滑动广告窗口小小记/" rel="next" title="滑动广告窗口小小记">
+                <i class="fa fa-chevron-left"></i> 滑动广告窗口小小记
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/09/16/客户端检测/"
+           data-title="客户端检测" data-url="http://yoursite.com/2016/09/16/客户端检测/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="Susie_Lee" />
+          <p class="site-author-name" itemprop="name">Susie_Lee</p>
+          <p class="site-description motion-element" itemprop="description">It is an ill wind that blows nobody good.</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">20</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Eisus" target="_blank" title="GitHut">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  GitHut
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#能力检测"><span class="nav-number">1.</span> <span class="nav-text">能力检测</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#怪癖检测"><span class="nav-number">2.</span> <span class="nav-text">怪癖检测</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用户代理检测"><span class="nav-number">3.</span> <span class="nav-text">用户代理检测</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#呈现引擎检测"><span class="nav-number">3.1.</span> <span class="nav-text">呈现引擎检测</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Susie_Lee</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+                     Total view <span id="busuanzi_value_site_pv"></span> &nbsp&nbsp&nbsp
+  You are the No.<span id="busuanzi_value_site_uv"></span> visiter.
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"Eisus"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
